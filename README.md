@@ -5,7 +5,7 @@
 {% hint style="danger" %}
 **This project is part of** [**thehacker.recipes**](https://www.thehacker.recipes/) **and is a work in progress**. I started it in 2018 and will probably "finish" it by 2024. But of course, it will never be finished, those subjects evolve day after day and I don't plan on letting this project become deprecated. 
 
-The Hacker Tools is focused on documenting and giving tips & tricks on common infosec tools.
+The Hacker Tools is focused on documenting and giving tips & tricks on common infosec tools
 
 The 🛠️ emoji is used where work has to be done.
 {% endhint %}
