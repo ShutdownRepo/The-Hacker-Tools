@@ -2,7 +2,8 @@
 
 * [Introduction](README.md)
 * [🛠️ Mimikatz](mimikatz/README.md)
-  * [ts](mimikatz/ts.md)
+  * [ts](mimikatz/ts/README.md)
+    * [multirdp](mimikatz/ts/multirdp.md)
   * [sid](mimikatz/sid.md)
   * [rpc](mimikatz/rpc.md)
   * [net](mimikatz/net.md)
