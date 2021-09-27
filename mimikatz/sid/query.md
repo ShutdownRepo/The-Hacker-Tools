@@ -4,6 +4,7 @@ This module can be used to query an object by its SID or name. It has the follow
 
 * `/sam`: the `sAMAccountName`
 * `/sid`: the security identifier
+* `/domain`: the domain name. If not specified, the current domain will be used
 
 ```text
 mimikatz # sid::query /sam:m3g9tr0n
