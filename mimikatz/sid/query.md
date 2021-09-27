@@ -2,7 +2,8 @@
 
 This module can be used to query an object by its SID or name. It has the following command line argument:
 
-* `/sam`: the `sAMAccountName`.
+* `/sam`: the `sAMAccountName`
+* `/sid`: the security identifier
 
 ```text
 mimikatz # sid::query /sam:m3g9tr0n

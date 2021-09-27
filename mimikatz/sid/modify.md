@@ -1,7 +1,3 @@
----
-description: Modify object SID of an object
----
-
 # modify
 
 This module can be used to modify an object's SID. It has the following command line argument:

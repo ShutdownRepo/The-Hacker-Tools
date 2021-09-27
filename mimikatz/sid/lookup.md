@@ -3,7 +3,7 @@
 This module can be used to lookup an object by its SID or name. It has the following command line arguments:
 
 * `/sid`: the security identifier value to lookup
-* `/name`: the name of the account to lookup
+* `/name`: the `sAMAccountName` of the account to lookup
 * `/domain`: the domain name. If not specified, the current domain will be used.
 
 ```text
