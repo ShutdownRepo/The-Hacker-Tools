@@ -1,6 +1,6 @@
 # mstsc
 
-This module can be used to extracts cleartext credentials from the mstsc process \(client side\)
+This module can be used to extract cleartext credentials from the mstsc process \(client side\)
 
 ```text
 mimikatz # privilege::debug

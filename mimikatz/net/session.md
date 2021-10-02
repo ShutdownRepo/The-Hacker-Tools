@@ -1,8 +1,6 @@
----
-description: It displays the active sessions through NetSessionEnum()
----
-
 # session
+
+It displays the active sessions through [NetSessionEnum\(\)](https://web.archive.org/web/20201201223201/https://docs.microsoft.com/en-us/windows/win32/api/lmshare/nf-lmshare-netsessionenum) Win32 API function.
 
 ```text
 mimikatz # net::session

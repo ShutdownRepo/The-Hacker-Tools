@@ -1,8 +1,6 @@
----
-description: It displays the local groups
----
-
 # group
+
+It displays the local groups
 
 ```text
 mimikatz # net::group

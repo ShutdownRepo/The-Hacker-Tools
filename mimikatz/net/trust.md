@@ -1,8 +1,8 @@
----
-description: It displays information for the active directory forest trusts
----
-
 # trust
+
+It displays information for the active directory forest trust\(s\). It has the following command line argument:
+
+* `/server`: The domain controller to query. If not specified it will query the DC of the current domain
 
 ```text
 mimikatz # net::trust

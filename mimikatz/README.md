@@ -1,2 +1,2 @@
-# 🛠️ Mimikatz
+# 🛠️ Mimikatz 🥝
 

@@ -1,8 +1,6 @@
----
-description: It displays the current time
----
-
 # tod
+
+It displays the current time
 
 ```text
 mimikatz # net::tod

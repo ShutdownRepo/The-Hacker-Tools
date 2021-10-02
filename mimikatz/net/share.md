@@ -1,8 +1,6 @@
----
-description: It displays the available shares
----
-
 # share
+
+It displays the available shares
 
 ```text
 mimikatz # net::share

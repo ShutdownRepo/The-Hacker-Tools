@@ -1,8 +1,6 @@
----
-description: It displays the local users
----
-
 # user
+
+It displays the local users
 
 ```text
 mimikatz # net::user

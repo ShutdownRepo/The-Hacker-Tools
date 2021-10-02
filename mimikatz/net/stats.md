@@ -1,8 +1,6 @@
----
-description: It displays when the target was booted
----
-
 # stats
+
+It displays when the target was booted
 
 ```text
 mimikatz # net::stats

@@ -1,8 +1,6 @@
----
-description: It displays the active sessions through NetWkstaUserEnum()
----
-
 # wsession
+
+It displays the active sessions through [NetWkstaUserEnum\(\)](https://web.archive.org/web/20190909155552/https://docs.microsoft.com/en-us/windows/win32/api/lmwksta/nf-lmwksta-netwkstauserenum) Win32 API function.
 
 ```text
 mimikatz # net::wsession

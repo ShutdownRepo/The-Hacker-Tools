@@ -1,7 +1,3 @@
----
-description: Connects to the RPC server
----
-
 # connect
 
 This module can be used to connect to an RPC endpoint. It has the following command line arguments:
@@ -13,7 +9,9 @@ This module can be used to connect to an RPC endpoint. It has the following comm
 * `/authdomain`: the domain of the authuser
 * `/authpassword`: the authuser's password
 
-Connect to an RPC server without authentication:
+{% tabs %}
+{% tab title="Without authentication" %}
+Mimikatz can connect to an RPC server without authentication.
 
 ```text
 mimikatz # rpc::connect /remote:192.168.0.224 /noauth
@@ -27,8 +25,10 @@ Algorithm: CALG_3DES (00006603)
 Endpoint resolution is OK
 mimikatz is bound!
 ```
+{% endtab %}
 
-If the RPC Server was started with an authentication requirement, the `auth*` arguments are needed.
+{% tab title="With authentication" %}
+Mimikatz can connect to an RPC server requiring authentication, the `auth*` arguments are needed.
 
 ```text
 mimikatz # rpc::connect /remote:192.168.0.224 /authuser:m3g9tr0n /authdomain:hacklab.local /authpassword:Super_SecretPass!
@@ -42,6 +42,8 @@ Algorithm: CALG_3DES (00006603)
 Endpoint resolution is OK
 mimikatz is bound!
 ```
+{% endtab %}
+{% endtabs %}
 
 To run commands on the remote server through the session initiated with mimikatz, a wildcard \(`*`\) should prepend the commands.
 
@@ -53,7 +55,11 @@ mimikatz # *hostname
 DC.hacklab.local (DC)
 ```
 
-The [mimikat](http://mimikatz.py/)[z.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/mimikatz.py) from impacket can also be used to connect to it:
+The [mimikat](http://mimikatz.py/)​[z.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/mimikatz.py) from Impacket can also be used to connect to it.
+
+{% tabs %}
+{% tab title="Without authentication" %}
+Without supplying credentials, mimikatz.py will attempt to start an unauthenticated session.
 
 ```text
 # python3 mimikatz.py 192.168.0.224                                                                                                                                                                                                     1 ⨯
@@ -72,8 +78,10 @@ Type help for list of commands
 mimikatz # hostname
 DC.hacklab.local (DC)
 ```
+{% endtab %}
 
-If the remote RPC endpoint requires authentication, then mimikatz.py will need credentials.
+{% tab title="With authentication" %}
+If the remote RPC endpoint requires authentication, mimikatz.py will need credentials.
 
 ```text
 # python3 mimikatz.py hacklab.local/m3g9tr0n:Super_SecretPass!@192.168.0.224
@@ -92,4 +100,6 @@ Type help for list of commands
 mimikatz # hostname
 DC.hacklab.local (DC)
 ```
+{% endtab %}
+{% endtabs %}
 

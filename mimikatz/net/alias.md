@@ -1,10 +1,6 @@
----
-description: >-
-  It displays more information about the local group memberships including
-  Remote Desktop Users, Distributed COM Users, etc.
----
-
 # alias
+
+It displays more information about the local group memberships including Remote Desktop Users, Distributed COM Users, etc.
 
 ```text
 mimikatz # net::alias
