@@ -1,2 +1,2 @@
-# 🛠️ CrackMapExec
+# CrackMapExec 🔱
 
