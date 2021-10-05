@@ -1,6 +1,6 @@
 # suspend
 
-It suspends the specified service. It sends a `SERVICE_CONTROL_PAUSE` signal. It has the following command line arguments:
+It suspends the specified service. It sends a `SERVICE_CONTROL_PAUSE` signal. It has the following command line argument:
 
 * positional argument: the service name to suspend
 
