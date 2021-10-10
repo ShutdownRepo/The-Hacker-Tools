@@ -4,10 +4,10 @@ The module can be used to list the current RDP sessions. It comes in handy for R
 
 Upon executing `ts::sessions` the following users are identified to be connected over RDP:
 
-* `hacklab\m3g9tr0n` \(Session: 3 - RDP-Tcp\#4\)
-* `hacklab\Administrator` \(Session: \*4 - RDP-Tcp\#5\)
+* `hacklab\m3g9tr0n` (Session: 3 - RDP-Tcp#4)
+* `hacklab\Administrator` (Session: \*4 - RDP-Tcp#5)
 
-```text
+```
 mimikatz # ts::sessions
 
 Session: 0 - Services
@@ -52,12 +52,12 @@ Session: 65536 - RDP-Tcp
 ```
 
 {% hint style="info" %}
-The asterisk on the **Session: \*4 - RDP-Tcp\#5** indicates the user via whom the **ts:sessions** is executed.
+The asterisk on the **Session: \*4 - RDP-Tcp#5 **indicates the user via whom the **ts:sessions** is executed.
 {% endhint %}
 
-Another interesting thing to pay attention is the **lock** field \(It can be leveraged for RDP lateral movement\). When a user has his/her monitor locked, then the following will be displayed:
+Another interesting thing to pay attention is the **lock** field (It can be leveraged for RDP lateral movement). When a user has his/her monitor locked, then the following will be displayed:
 
-```text
+```
 mimikatz # ts::sessions
 
 Session: 3 - RDP-Tcp#4
@@ -72,5 +72,4 @@ Session: 3 - RDP-Tcp#4
   addr4: 192.168.0.92
 ```
 
-_\(Demonstration target is a Windows Server 2016 Essentials\)_
-
+_(Demonstration target is a Windows Server 2016 Essentials)_
