@@ -11,7 +11,7 @@ There are two local administrator users:
 * `m3g9tr0n `(Local Administrator)
 * `hacklab.local\m3g9tr0n` (Domain user part of the local administrators group)
 
-![Local admins on the target Windows 7](../../../.gitbook/assets/multi-rdp\_3.PNG)
+![Local admins on the target Windows 7](../../../.gitbook/assets/multi-rdp\_3.png)
 
 ```
 mimikatz # privilege::debug
@@ -25,7 +25,7 @@ mimikatz # ts::multirdp
 
 As a result, it is possible to initiate another RDP connection while the other user is already connected.
 
-![RDP successful patching](../../../.gitbook/assets/multi-rdp\_2.PNG)
+![RDP successful patching](../../../.gitbook/assets/multi-rdp\_2.png)
 
 {% hint style="info" %}
 According to [Benjamin Delpy](https://twitter.com/gentilkiwi/status/1246510049293451266), the `multirdp` module still works on the following recent versions of Windows:
