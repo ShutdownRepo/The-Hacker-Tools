@@ -1,9 +1,9 @@
 # Introduction
 
-![](.gitbook/assets/thr_preview.png)
+![](.gitbook/assets/thr\_preview.png)
 
 {% hint style="danger" %}
-**This project is part of **[**thehacker.recipes**](https://www.thehacker.recipes)** and is a work in progress**. I started it in 2021 and have absolutely no idea when this could be finished (will it ever be?).
+**This project is part of **[**The Hacker Recipes**](https://www.thehacker.recipes)** and is a work in progress**. I started it in 2021 and have absolutely no idea when this could be finished (will it ever be?).
 
 The Hacker Tools is focused on documenting and giving tips & tricks on common infosec tools
 

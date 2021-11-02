@@ -1,6 +1,6 @@
 # modify
 
-This module can be used to modify an object's SID. It has the following command line argument:
+`sid::modify` can be used to modify an object's SID. It has the following command line argument:
 
 * `/sam`: the `sAMAccountName`.
 * `/new`: the new SID value. It also accepts format such as `Builtin\administrators`.
