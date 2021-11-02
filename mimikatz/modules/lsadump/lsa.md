@@ -3,7 +3,7 @@
 It extracts hashes from memory by asking the LSA server. The `patch` or `inject` takes place on the fly. It has the following command line arguments:
 
 * `/name` or `/user` : the target user account
-* `/id` : the Relative Identifier for the target account (500 for Administrator)
+* `/id` : the RID (relative identifier) for the target account (500 for Administrator)
 * `/patch` : Only dumps the LM and NT password hashes
 * `/inject` : when run on a workstation, it will dump the LM and NT password hashes. When run on domain controller is will dump LM, NT, Wdigest, Kerberos keys and password history.
 
