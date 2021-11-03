@@ -1,6 +1,6 @@
 # packages
 
-It lists the available Windows authentication mechanisms.
+`lsadump::packages` lists the available Windows authentication mechanisms.
 
 ```
 mimikatz # lsadump::packages
