@@ -111,6 +111,7 @@
       * [netsync](mimikatz/modules/lsadump/netsync.md)
       * [packages](mimikatz/modules/lsadump/packages.md)
       * [zerologon](mimikatz/modules/lsadump/zerologon.md)
+      * [postzerologon](mimikatz/modules/lsadump/postzerologon.md)
       * [dcshadow](mimikatz/modules/lsadump/dcshadow.md)
       * [changentlm](mimikatz/modules/lsadump/changentlm.md)
       * [backupkeys](mimikatz/modules/lsadump/backupkeys.md)

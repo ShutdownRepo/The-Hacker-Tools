@@ -1,6 +1,6 @@
 # backupkeys
 
-It dumps the DPAPI backup keys from the Domain Controller (cf. [dumping DPAPI secrets](https://www.thehacker.recipes/ad/movement/credentials/dumping/dpapi-protected-secrets)). By holding the backup keys any user's master key can be decrypted and as a result the users' secrets can be decrypted. It has the following command line arguments:
+`lsadump::backupkeys` dumps the DPAPI backup keys from the Domain Controller (cf. [dumping DPAPI secrets](https://www.thehacker.recipes/ad/movement/credentials/dumping/dpapi-protected-secrets)). By holding the backup keys any user's master key can be decrypted and as a result the users' secrets can be decrypted. It has the following command line arguments:
 
 * `/export`: export the output as `.pvk` which means "_private key_"
 * `/secret`: _at the time of writing, November 1st 2021, we don't know what this option refers to_

@@ -20,8 +20,6 @@
 This technique can break the domain's replication services hence leading to massive disruption, running the following "password change" technique is **not advised**.
 {% endhint %}
 
-Detect if the target domain controller is vulnerable:
-
 ### Detection
 
 ```
