@@ -1,6 +1,6 @@
 # security
 
-`privilege::requests` requests the security privilege (`SeSecurityPrivilege`).
+`privilege::security` requests the security privilege (`SeSecurityPrivilege`).
 
 > Required to perform a number of security-related functions, such as controlling and viewing audit messages. This privilege identifies its holder as a security operator.
 >

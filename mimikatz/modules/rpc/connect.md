@@ -1,6 +1,6 @@
 # connect
 
-`rpc::connect` be used to connect to an RPC endpoint. It has the following command line arguments:
+`rpc::connect` can be used to connect to an RPC endpoint. It has the following command line arguments:
 
 * `/alg`: the encryption algorithm to use for the connection. The options are 3DES or RC4. By default it uses 3DES.
 * `/remote`: the RPC server to connect
