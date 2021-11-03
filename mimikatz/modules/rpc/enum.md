@@ -1,8 +1,8 @@
 # enum
 
-`rpc::enum` can be used to enumerate RPC endpoints on a system.
+This module can be used to enumerate RPC endpoints on a system.
 
-```
+```text
 mimikatz # rpc::enum
 [rpc] Remote   : (null)
 [rpc] ProtSeq  : ncacn_ip_tcp
@@ -33,3 +33,4 @@ UUID: {3573e5f2-cfe7-4a79-845f-fe7c68823738}
 
 ..Omitted...
 ```
+

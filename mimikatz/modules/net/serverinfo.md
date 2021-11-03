@@ -1,10 +1,10 @@
 # serverinfo
 
-`net::serverinfo` displays information about the logged in server
+It displays information about the logged in server
 
 {% tabs %}
 {% tab title="Win 10" %}
-```
+```text
 mimikatz # net::serverinfo
 platform_id: 500
 name       : WIN10
@@ -15,7 +15,7 @@ type       : 00001003 - workstation ; server ; nt ;
 {% endtab %}
 
 {% tab title="Win Server 2012R2" %}
-```
+```text
 mimikatz # net::serverinfo
 platform_id: 500
 name       : WIN2012-R2
@@ -26,7 +26,7 @@ type       : 00009003 - workstation ; server ; nt ; server_nt ;
 {% endtab %}
 
 {% tab title="Win Server 2016 Essentials" %}
-```
+```text
 mimikatz # net::serverinfo
 platform_id: 500
 name       : DC
@@ -36,3 +36,6 @@ type       : 0080102b - workstation ; server ; domain_ctrl ; time_source ; nt ; 
 ```
 {% endtab %}
 {% endtabs %}
+
+
+

@@ -1,6 +1,6 @@
 # imports
 
-It lists all the imported functions from the DLLs each running process is using. If a** **`/pid` is not specified, then imports for `mimikatz.exe` will be displayed. It has the following command line argument:
+`process::imports` lists all the imported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then imports for `mimikatz.exe` will be displayed. It has the following command line argument:
 
 * `/pid`: the process id
 

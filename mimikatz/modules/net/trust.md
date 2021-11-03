@@ -1,10 +1,10 @@
 # trust
 
-`net::trust` displays information for the active directory forest trust(s). It has the following command line argument:
+It displays information for the active directory forest trust\(s\). It has the following command line argument:
 
 * `/server`: The domain controller to query. If not specified it will query the DC of the current domain
 
-```
+```text
 mimikatz # net::trust
 RPC mode:
 [ 0] Netbios   : hacklab
@@ -15,3 +15,4 @@ RPC mode:
      SID       : S-1-5-21-2725560159-1428537199-2260736313
      GUID      : {9901d757-a63d-478f-a96a-f8be1a8308ac}
 ```
+

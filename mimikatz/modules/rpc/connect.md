@@ -1,6 +1,6 @@
 # connect
 
-`rpc::connect` be used to connect to an RPC endpoint. It has the following command line arguments:
+This module can be used to connect to an RPC endpoint. It has the following command line arguments:
 
 * `/alg`: the encryption algorithm to use for the connection. The options are 3DES or RC4. By default it uses 3DES.
 * `/remote`: the RPC server to connect
@@ -13,7 +13,7 @@
 {% tab title="Without authentication" %}
 Mimikatz can connect to an RPC server without authentication.
 
-```
+```text
 mimikatz # rpc::connect /remote:192.168.0.224 /noauth
 [rpc] Remote   : 192.168.0.224
 [rpc] ProtSeq  : ncacn_ip_tcp
@@ -30,7 +30,7 @@ mimikatz is bound!
 {% tab title="With authentication" %}
 Mimikatz can connect to an RPC server requiring authentication, the `auth*` arguments are needed.
 
-```
+```text
 mimikatz # rpc::connect /remote:192.168.0.224 /authuser:m3g9tr0n /authdomain:hacklab.local /authpassword:Super_SecretPass!
 [rpc] Remote   : 192.168.0.224
 [rpc] ProtSeq  : ncacn_ip_tcp
@@ -45,9 +45,9 @@ mimikatz is bound!
 {% endtab %}
 {% endtabs %}
 
-To run commands on the remote server through the session initiated with mimikatz, a wildcard (`*`) should prepend the commands.
+To run commands on the remote server through the session initiated with mimikatz, a wildcard \(`*`\) should prepend the commands.
 
-```
+```text
 mimikatz # hostname
 Win10.hacklab.local (WIN10)
 
@@ -55,13 +55,13 @@ mimikatz # *hostname
 DC.hacklab.local (DC)
 ```
 
-The [mimikat](http://mimikatz.py)​[z.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/mimikatz.py) from Impacket can also be used to connect to it.
+The [mimikat](http://mimikatz.py/)​[z.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/mimikatz.py) from Impacket can also be used to connect to it.
 
 {% tabs %}
 {% tab title="Without authentication" %}
 Without supplying credentials, mimikatz.py will attempt to start an unauthenticated session.
 
-```
+```text
 # python3 mimikatz.py 192.168.0.224                                                                                                                                                                                                     1 ⨯
 Impacket v0.9.24.dev1+20210922.102044.c7bc76f8 - Copyright 2021 SecureAuth Corporation
 
@@ -83,7 +83,7 @@ DC.hacklab.local (DC)
 {% tab title="With authentication" %}
 If the remote RPC endpoint requires authentication, mimikatz.py will need credentials.
 
-```
+```text
 # python3 mimikatz.py hacklab.local/m3g9tr0n:Super_SecretPass!@192.168.0.224
 Impacket v0.9.24.dev1+20210922.102044.c7bc76f8 - Copyright 2021 SecureAuth Corporation
 
@@ -102,3 +102,4 @@ DC.hacklab.local (DC)
 ```
 {% endtab %}
 {% endtabs %}
+

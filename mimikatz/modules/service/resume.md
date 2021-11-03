@@ -1,10 +1,10 @@
 # resume
 
-It resumes a specified service, after successful suspending, by sending a `SERVICE_CONTROL_CONTINUE` signal. It has the following command line argument:
+`service::resume` resumes a specified service, after successful suspending, by sending a `SERVICE_CONTROL_CONTINUE` signal. It has the following command line argument:
 
 * positional argument: the name of the service to resume
 
-```text
+```
 mimikatz# service::resume iphlpsvc
 ```
 
@@ -16,6 +16,5 @@ Some errors that might be encountered with this command:
 {% endhint %}
 
 {% hint style="danger" %}
-It must be noted that this command was not found to work on either Windows 7 or Window 10. 
+It must be noted that this command was not found to work on either Windows 7 or Window 10.
 {% endhint %}
-

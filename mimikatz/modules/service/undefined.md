@@ -1,6 +1,6 @@
 # -
 
-It removes the** **`mimikatzsvc` service**.**
+`service::-` removes the\*\* **`mimikatzsvc` service**.\*\*
 
 ```
 mimikatz # service::-

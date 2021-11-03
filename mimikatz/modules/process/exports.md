@@ -1,6 +1,6 @@
 # exports
 
-It lists all the exported functions from the DLLs each running process is using. If a** **`/pid` is not specified, then exports for `mimikatz.exe` will be displayed. It has the following command line argument:
+`process::exports` lists all the exported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then exports for `mimikatz.exe` will be displayed. It has the following command line argument:
 
 * `/pid`: the process id
 

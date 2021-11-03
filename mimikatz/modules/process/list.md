@@ -1,8 +1,8 @@
 # list
 
-It lists all the running processes. It uses the [NtQuerySystemInformation](https://docs.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation) Windows Native API function.
+`process::list` lists all the running processes. It uses the [NtQuerySystemInformation](https://docs.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation) Windows Native API function.
 
-```text
+```
 mimikatz # process::list
 4       System
 92      Registry
@@ -18,4 +18,3 @@ mimikatz # process::list
 
 ...Output Omitted...
 ```
-

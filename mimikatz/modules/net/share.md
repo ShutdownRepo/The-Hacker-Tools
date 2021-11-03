@@ -1,8 +1,8 @@
 # share
 
-`net::share` displays the available shares
+It displays the available shares
 
-```
+```text
 mimikatz # net::share
 
 Netname : ADMIN$
@@ -20,3 +20,4 @@ Type    : 80000003 - ipc ; special ;
 Uses    : 0/4294967295
 Path    :
 ```
+

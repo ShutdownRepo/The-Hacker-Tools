@@ -1,17 +1,17 @@
 # deleg
 
-`net::deleg` checks for the following types of [Kerberos delegations](https://www.thehacker.recipes/ad-ds/movement/kerberos/delegations)
+This function of Mimikatz checks for the following types of [Kerberos delegations](https://www.thehacker.recipes/ad-ds/movement/kerberos/delegations)
 
-* Unconstrained Delegation (`TRUSTED_FOR_DELEGATION`)
-* Constrained Delegation (`TRUSTED_TO_AUTH_FOR_DELEGATION`, set with the `msDS-Allowed-To-Delegate-To`attribute)
-* Resource Based Constrained Delegation (set with the `msDS-Allowed-To-Act-On-Behalf-Of-Another-Identity` attribute)
+* Unconstrained Delegation \(`TRUSTED_FOR_DELEGATION`\)
+* Constrained Delegation \(`TRUSTED_TO_AUTH_FOR_DELEGATION`, set with the `msDS-Allowed-To-Delegate-To`attribute\)
+* Resource Based Constrained Delegation \(set with the `msDS-Allowed-To-Act-On-Behalf-Of-Another-Identity` attribute\)
 
 It has the following command line arguments:
 
 * `/dns`: the active directory domain to query
 * `/server`: The domain controller to query. If not specified it will query the DC of the current domain
 
-```
+```text
 mimikatz # net::deleg
 
 CN=Win2019,OU=Servers,DC=hacklab,DC=local
@@ -29,3 +29,4 @@ CN=Win2019,OU=Servers,DC=hacklab,DC=local
     RestrictedKrbHost/Win2019.hacklab.local
     HOST/Win2019.hacklab.local
 ```
+
