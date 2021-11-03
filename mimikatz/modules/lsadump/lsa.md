@@ -1,5 +1,7 @@
 # lsa
 
+`lsadump::lsa` extracts hashes from memory by asking the LSA server. The `patch` or `inject` takes place on the fly. It has the following command line arguments:
+
 It extracts hashes from memory by asking the LSA server. The `patch` or `inject` takes place on the fly. It has the following command line arguments:
 
 * `/name` or `/user` : the target user account
