@@ -1,5 +1,7 @@
 # sam
 
+`lsadump::sam` dumps the local Security Account Manager (SAM) NT hashes (cf. [SAM secrets dump](https://www.thehacker.recipes/ad/movement/credentials/dumping/sam-and-lsa-secrets)). It can operate directly on the target system, or offline with registry hives backups (for `SAM` and `SYSTEM`). It has the following command line arguments:
+
 It dumps the local Security Account Manager (SAM) NT hashes (cf. [SAM secrets dump](https://www.thehacker.recipes/ad/movement/credentials/dumping/sam-and-lsa-secrets)). It can operate directly on the target system, or offline with registry hives backups (for `SAM` and `SYSTEM`). It has the following command line arguments:
 
 * `/sam`: the offline backup of the SAM hive
@@ -45,7 +47,7 @@ reg save HKLM\SYSTEM system.hive
 reg save HKLM\SAM sam.hive
 ```
 
-A Volume Shadow Copy / BootCD  can also be used to backup these files:
+A Volume Shadow Copy / BootCD can also be used to backup these files:
 
 ```
 C:\Windows\System32\config\SYSTEM
@@ -57,4 +59,3 @@ Then the saved backups of `SYSTEM` and `SAM` hives can also be used offline:
 ```
 mimikatz # lsadump::sam /system:system.hive /sam:sam.hive
 ```
-
