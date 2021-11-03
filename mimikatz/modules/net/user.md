@@ -1,8 +1,8 @@
 # user
 
-It displays the local users
+`net::user` displays the local users
 
-```text
+```
 mimikatz # net::user
 
 Domain name : Builtin
@@ -26,4 +26,3 @@ Domain SID  : S-1-5-21-1604892360-3618202543-1602915806
  504   WDAGUtilityAccount
  | 513   None   (Group)
 ```
-

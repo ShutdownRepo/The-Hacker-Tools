@@ -1,8 +1,8 @@
 # alias
 
-It displays more information about the local group memberships including Remote Desktop Users, Distributed COM Users, etc.
+`net::alias` displays more information about the local group memberships including Remote Desktop Users, Distributed COM Users, etc.
 
-```text
+```
 mimikatz # net::alias
 
 Domain name : Builtin
@@ -42,4 +42,3 @@ Domain SID  : S-1-5-32
 Domain name : WIN10
 Domain SID  : S-1-5-21-1604892360-3618202543-1602915806
 ```
-

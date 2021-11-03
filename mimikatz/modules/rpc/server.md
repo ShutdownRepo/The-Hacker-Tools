@@ -1,12 +1,12 @@
 # server
 
-This module can be used to start an RPC server. It has the following command line arguments:
+`rpc::server` can be used to start an RPC server. It has the following command line arguments:
 
 * `/stop`: terminates the RPC connection
-* `/guid`: the guid for the RPC endpoint \(opsec safe\)
+* `/guid`: the guid for the RPC endpoint (opsec safe)
 * `/noreg`: to not register the RPC binding
 * `/secure`: only secure connections are accepted
-* `/altservice`: alter the rpc service name \(opsec safe\)
+* `/altservice`: alter the rpc service name (opsec safe)
 * `/negotiate`: the default authentication mechanism `GSS_NEGOTIATE (9)`.
 * `/ntlm:` use NTLM authentication `WINNT (10)`.
 * `/kerberos`: use Kerberos authentication `GSS_KERBEROS (16)`.
@@ -14,12 +14,12 @@ This module can be used to start an RPC server. It has the following command lin
 * `/authdomain`: the domain of the authuser
 * `/authpassword`: the authuser's password
 
-```text
+```
 mimikatz # privilege::debug
 Privilege '20' OK
 ```
 
-```text
+```
 mimikatz # token::elevate
 Token Id  : 0
 User name :
@@ -35,7 +35,7 @@ SID name  : NT AUTHORITY\SYSTEM
 {% tab title="Without authentication" %}
 An RPC server can be started without an authentication requirement.
 
-```text
+```
 mimikatz # rpc::server
 [rpc] ProtSeq  : ncacn_ip_tcp
 [rpc] Endpoint : (null)
@@ -53,7 +53,7 @@ mimikatz #  > BindString[0]: ncacn_ip_tcp:DC[61057]
 {% tab title="With authentication" %}
 An RPC server can be started with an authentication requirement.
 
-```text
+```
 mimikatz # rpc::server /secure /authuser:m3g9tr0n /authdomain:hacklab.local /authpassword:Super_SecretPass!
 [rpc] ProtSeq  : ncacn_ip_tcp
 [rpc] Endpoint : (null)
@@ -74,4 +74,3 @@ mimikatz # ** Security Callback! **
 ```
 {% endtab %}
 {% endtabs %}
-

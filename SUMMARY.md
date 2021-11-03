@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Mimikatz 🥝](mimikatz/README.md)
+* [🛠️ Mimikatz 🥝](mimikatz/README.md)
   * [General](mimikatz/general.md)
   * [Modules](mimikatz/modules/README.md)
     * [ts](mimikatz/modules/ts/README.md)
@@ -128,8 +128,7 @@
       * [localtime](mimikatz/modules/standard/localtime.md)
       * [hostname](mimikatz/modules/standard/hostname.md)
     * [kerberos](mimikatz/modules/kerberos.md)
-* [Impacket](impacket/README.md)
-  * [General](impacket/general.md)
+* [🛠️ Impacket](impacket/README.md)
   * [Library](impacket/library/README.md)
     * [SMB](impacket/library/smb.md)
     * [LDAP](impacket/library/ldap.md)
@@ -190,7 +189,7 @@
     * [wmiexec](impacket/examples/wmiexec.md)
     * [wmipersist](impacket/examples/wmipersist.md)
     * [wmiquery](impacket/examples/wmiquery.md)
-* [CrackMapExec 🔱](crackmapexec/README.md)
+* [🛠️ CrackMapExec 🔱](crackmapexec/README.md)
   * [General](crackmapexec/general.md)
   * [Protocols](crackmapexec/protocols/README.md)
     * [mssql](crackmapexec/protocols/mssql.md)

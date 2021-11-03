@@ -1,6 +1,6 @@
 # drop
 
-Patch Events service to avoid new events ( :warning: experimental)
+`event::drop` can be used to patch event services to avoid new events ( :warning: experimental)
 
 ```
 mimikatz # privilege::debug

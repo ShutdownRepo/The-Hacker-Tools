@@ -1,16 +1,20 @@
-# Impacket
+# 🛠️ Impacket
 
 Impacket is a collection of Python classes for working with network protocols. Impacket is focused on providing low-level programmatic access to the packets and for some protocols (e.g. SMB1-3 and MSRPC) the protocol implementation itself.
 
 Packets can be constructed from scratch, as well as parsed from raw data, and the object oriented API makes it simple to work with deep hierarchies of protocols. The library provides a set of tools as examples of what can be done within the context of this library.
 
-## Setup
+## Library
+
+///// placeholder
+
+## PLACEHOLDER
 
 * **Quick start**: Click the following link to obtain the latest version [gzip’d tarbal](https://github.com/SecureAuthCorp/impacket/releases/download/impacket\_0\_9\_22/impacket-0.9.22.tar.gz)
 * **Requirements**: [Python](http://www.python.org) interpreter (version 2.7, 3.6, 3.7, 3.8 or 3.9). [Third-party](https://github.com/SecureAuthCorp/impacket/blob/master/requirements.txt) packages also needed.
-* **Installing**: In order to install the code, execute `python setup.py install` or from the directory you placed it `python -m pip install`** **_**.**_
+* **Installing**: In order to install the code, execute `python setup.py install` or from the directory you placed it `python -m pip install`\*\* **\_**.\*\*\_
 
-## Usage
+## PLACEHOLDER
 
 #### The following protocols are featured in Impacket <a href="toc1" id="toc1"></a>
 
@@ -24,6 +28,8 @@ Packets can be constructed from scratch, as well as parsed from raw data, and th
 * Portions of TDS (MSSQL) and LDAP protocol implementations.
 
 The following tools are featured in Impacket
+
+## Script examples
 
 ### **Remote Execution**
 
@@ -39,14 +45,14 @@ The following tools are featured in Impacket
 * [GetST.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/getST.py) Given a password, hash, aesKey or TGT in ccache, this script will request a Service Ticket and save it as ccache. If the account has constrained delegation (with protocol transition) privileges you will be able to use the -impersonate switch to request the ticket on behalf another user.
 * [GetPac.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/getPac.py) This script will get the PAC (Privilege Attribute Certificate) structure of the specified target user just having a normal authenticated user credentials. It does so by using a mix of \[MS-SFU]’s S4USelf + User to User Kerberos Authentication.
 * [GetUserSPNs.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/GetUserSPNs.py) This example will try to find and fetch Service Principal Names that are associated with normal user accounts. Output is compatible with JtR and HashCat.
-* [GetNPUsers.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/GetNPUsers.py) This example will attempt to list and get TGTs for those users that have the property ‘Do not require Kerberos preauthentication’ set (UF_DONT_REQUIRE_PREAUTH). Output is compatible with JtR.
+* [GetNPUsers.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/GetNPUsers.py) This example will attempt to list and get TGTs for those users that have the property ‘Do not require Kerberos preauthentication’ set (UF\_DONT\_REQUIRE\_PREAUTH). Output is compatible with JtR.
 * [ticketConverter.py](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/ticketConverter.py): This script will convert kirbi files, commonly used by mimikatz, into ccache files used by Impacket, and vice versa.
-* [ticketer.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/ticketer.py) This script will create Golden/Silver tickets from scratch or based on a template (legally requested from the KDC) allowing you to customize some of the parameters set inside the PAC_LOGON_INFO structure, in particular the groups, ExtraSids, duration, etc.
+* [ticketer.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/ticketer.py) This script will create Golden/Silver tickets from scratch or based on a template (legally requested from the KDC) allowing you to customize some of the parameters set inside the PAC\_LOGON\_INFO structure, in particular the groups, ExtraSids, duration, etc.
 * [raiseChild.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/raiseChild.py) This script implements a child-domain to forest privilege escalation by (ab)using the concept of Golden Tickets and ExtraSids.
 
 ### **Windows Secrets**
 
-* [secretsdump.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/secretsdump.py) Performs various techniques to dump secrets from the remote machine without executing any agent there. For SAM and LSA Secrets (including cached creds) we try to read as much as we can from the registry and then we save the hives in the target system (%SYSTEMROOT%\Temp directory) and read the rest of the data from there. For DIT files, we dump NTLM hashes, Plaintext credentials (if available) and Kerberos keys using the DL_DRSGetNCChanges() method. It can also dump NTDS.dit via vssadmin executed with the smbexec/wmiexec approach. The script initiates the services required for its working if they are not available (e.g. Remote Registry, even if it is disabled). After the work is done, things are restored to the original state.
+* [secretsdump.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/secretsdump.py) Performs various techniques to dump secrets from the remote machine without executing any agent there. For SAM and LSA Secrets (including cached creds) we try to read as much as we can from the registry and then we save the hives in the target system (%SYSTEMROOT%\Temp directory) and read the rest of the data from there. For DIT files, we dump NTLM hashes, Plaintext credentials (if available) and Kerberos keys using the DL\_DRSGetNCChanges() method. It can also dump NTDS.dit via vssadmin executed with the smbexec/wmiexec approach. The script initiates the services required for its working if they are not available (e.g. Remote Registry, even if it is disabled). After the work is done, things are restored to the original state.
 * [mimikatz.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/mimikatz.py) Mini shell to control a remote mimikatz RPC server developed by @gentilkiwi.
 
 ### **Server Tools/MiTM Attacks**
@@ -97,8 +103,8 @@ The following tools are featured in Impacket
 * [findDelegation.py](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/findDelegation.py): Simple script to quickly list all delegation relationships (unconstrained, constrained, resource-based constrained) in an AD environment.
 * [GetADUsers.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/GetADUsers.py) This script will gather data about the domain’s users and their corresponding email addresses. It will also include some extra information about last logon and last password set attributes.
 * [Get-GPPPassword.py](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/Get-GPPPassword.py): This example extracts and decrypts Group Policy Preferences passwords using streams for treating files instead of mounting shares. Additionally, it can parse GPP XML files offline.
-* [mqtt_check.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/mqtt_check.py) Simple MQTT example aimed at playing with different login options. Can be converted into a account/password brute forcer quite easily.
-* [rdp_check.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/rdp_check.py) \[MS-RDPBCGR] and \[MS-CREDSSP] partial implementation just to reach CredSSP auth. This example tests whether an account is valid on the target host.
+* [mqtt\_check.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/mqtt\_check.py) Simple MQTT example aimed at playing with different login options. Can be converted into a account/password brute forcer quite easily.
+* [rdp\_check.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/rdp\_check.py) \[MS-RDPBCGR] and \[MS-CREDSSP] partial implementation just to reach CredSSP auth. This example tests whether an account is valid on the target host.
 * [sniff.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/sniff.py) Simple packet sniffer that uses the pcapy library to listen for packets in # transit over the specified interface.
 * [sniffer.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/sniffer.py) Simple packet sniffer that uses a raw socket to listen for packets in transit corresponding to the specified protocols.
 * [ping.py:](https://github.com/SecureAuthCorp/impacket/blob/impacket\_0\_9\_23/examples/ping.py) Simple ICMP ping that uses the ICMP echo and echo-reply packets to check the status of a host. If the remote host is up, it should reply to the echo probe with an echo-reply packet.
