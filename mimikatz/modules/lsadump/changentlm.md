@@ -1,6 +1,6 @@
 # changentlm
 
-It can be used to change the password of a user. It accepts either a clear-text password or an NT hash.  [According to Benjamin](https://twitter.com/gentilkiwi/status/872588656967548928?s=20) this option avoids the "setpassword" event but it requires to know the previous password or NT hash. It has the following command line arguments:
+It can be used to change the password of a user. It accepts either a clear-text password or an NT hash. [According to Benjamin](https://twitter.com/gentilkiwi/status/872588656967548928?s=20) this option avoids the "setpassword" event but it requires to know the previous password or NT hash. It has the following command line arguments:
 
 * `/newpassword`: The new clear text password for the target user
 * `/oldpassword` : The existing clear text password to change
@@ -33,7 +33,7 @@ User RID     : 1479
 >> Change password is a success!
 ```
 
-While [lsadump::setntlm](https://app.gitbook.com/o/-MHRexVI3zSPLt5XfmzC/s/-MiRT0QHotSpofwDFs\_w/c/BS7ADuc9BHJUQTOlu3jb/mimikatz/modules/lsadump/setntlm) seems to work multiple times for the same user account, this is not the case for `lsadump::changentlm`. According to this [issue](https://github.com/gentilkiwi/mimikatz/issues/201) on mimikatz's Github, a user cannot change his password more than one per day.
+While [lsadump::setntlm](setntlm.md) seems to work multiple times for the same user account, this is not the case for `lsadump::changentlm`. According to this [issue](https://github.com/gentilkiwi/mimikatz/issues/201) on mimikatz's Github, a user cannot change his password more than one per day.
 
 ```
 mimikatz # lsadump::changentlm /server:DC.hacklab.local /user:optimus /old:b09a14d2d325026f8986d4a874fbcbc7 /newpassword:WhatEverYouWant
