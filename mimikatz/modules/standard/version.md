@@ -1,6 +1,6 @@
 # version
 
-It displays the version in use of Mimikatz. It has the following command line arguments:
+`standard::version` or `version` displays the version in use of Mimikatz. It has the following command line arguments:
 
 * `/full`: it displays all the DLLs used by Mimikatz
 * `/cab`: it creates a **.cab** file for troubleshooting purposes

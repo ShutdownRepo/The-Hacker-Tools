@@ -1,8 +1,8 @@
 # debug
 
-It requests the debug privilege (`SeDebugPrivilege`).
+`privilege::debug` requests the debug privilege (`SeDebugPrivilege`).
 
-> Required to debug and adjust the memory of a process owned by another account.&#x20;
+> Required to debug and adjust the memory of a process owned by another account.
 >
 > User Right: Debug programs.
 >

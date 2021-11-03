@@ -1,6 +1,6 @@
 # krbtgt
 
-It retrieves the krbtgt RC4 (i.e. NT hash), AES128 and AES256 hashes.
+`sekurlsa::krbtgt` retrieves the krbtgt RC4 (i.e. NT hash), AES128 and AES256 hashes.
 
 {% hint style="warning" %}
 This command must be run on a domain controller

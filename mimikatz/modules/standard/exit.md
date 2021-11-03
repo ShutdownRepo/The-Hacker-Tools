@@ -1,6 +1,6 @@
 # exit
 
-It quits Mimikatz after clearing routines.
+`standard::exit` or `exit` quits Mimikatz after clearing routines.
 
 ```
 mimikatz # exit

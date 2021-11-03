@@ -1,6 +1,6 @@
 # credman
 
-It lists Credentials Manager by targeting the Microsoft Local Security Authority Server DLL ([lsasrv.dll](https://windows10dll.nirsoft.net/lsasrv\_dll.html)).
+`sekurlsa::credman` lists Credentials Manager by targeting the Microsoft Local Security Authority Server DLL ([lsasrv.dll](https://windows10dll.nirsoft.net/lsasrv\_dll.html)).
 
 {% hint style="warning" %}
 This command requires elevated privileges (by previously running [`privilege::debug`](../privilege/debug.md) or by executing Mimikatz as the `NT-AUTHORITY\SYSTEM` account).

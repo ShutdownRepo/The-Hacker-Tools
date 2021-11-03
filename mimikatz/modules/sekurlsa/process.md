@@ -1,6 +1,6 @@
 # process
 
-It switches (or reinits) to LSASS process context. It can be used after [`sekurlsa::minidump`](minidump.md).
+`sekurlsa::process` switches (or reinits) to LSASS process context. It can be used after [`sekurlsa::minidump`](minidump.md).
 
 ```
 mimikatz # sekurlsa::minidump lsass.dump.dmp

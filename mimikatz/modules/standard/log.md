@@ -1,6 +1,6 @@
 # log
 
-It logs mimikatz input/output to a file. It has the following command line arguments:
+`standard::log` or `log` logs mimikatz input/output to a file. It has the following command line arguments:
 
 * positional argument: the filename for the log file (by default it is `mimikatz.log`)
 * `/stop`: stop the file logging

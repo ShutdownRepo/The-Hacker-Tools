@@ -1,6 +1,6 @@
 # backupkeys
 
-It lists the preferred Backup Master keys. It has the following command line argument:
+`sekurlsa::backupkeys` lists the preferred Backup Master keys. It has the following command line argument:
 
 * `/export`: save the keys to a file
 

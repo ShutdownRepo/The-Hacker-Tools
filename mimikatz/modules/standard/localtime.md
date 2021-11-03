@@ -1,6 +1,6 @@
 # localtime
 
-It displays system local date and time
+`standard::localtime` or `localtime` displays system local date and time
 
 ```
 mimikatz # localtime

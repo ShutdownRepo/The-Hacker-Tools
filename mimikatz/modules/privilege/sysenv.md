@@ -1,8 +1,8 @@
 # sysenv
 
-It requests the system environment privilege (`SeSystemEnvironmentPrivilege`).
+`privilege::sysenv` requests the system environment privilege (`SeSystemEnvironmentPrivilege`).
 
-> Required to modify the nonvolatile RAM of systems that use this type of memory to store configuration information.&#x20;
+> Required to modify the nonvolatile RAM of systems that use this type of memory to store configuration information.
 >
 > User Right: Modify firmware environment values.
 >

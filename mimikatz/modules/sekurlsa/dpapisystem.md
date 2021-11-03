@@ -1,6 +1,6 @@
 # dpapisystem
 
-It lists the DPAPI\_SYSTEM secret key.
+`sekurlsa::dpapisystem` lists the `DPAPI_SYSTEM` secret key.
 
 {% hint style="warning" %}
 This command requires elevated privileges (by previously running [`privilege::debug`](../privilege/debug.md) or by executing Mimikatz as the `NT-AUTHORITY\SYSTEM` account).

@@ -1,6 +1,6 @@
 # tickets
 
-It lists Kerberos tickets belonging to all authenticated users on the target server/workstation. Unlike [`kerberos::list`](../process/list.md), sekurlsa uses memory reading and is not subject to key export restrictions. Sekurlsa can also access tickets of others sessions (users). It has the following command line argument:
+`prisekurlsa::tickets` lists Kerberos tickets belonging to all authenticated users on the target server/workstation. Unlike [`kerberos::list`](../process/list.md), sekurlsa uses memory reading and is not subject to key export restrictions. Sekurlsa can also access tickets of others sessions (users). It has the following command line argument:
 
 * `/export`: tickets are exported in `.kirbi` files. They start with user's LUID and group number (0 = TGS, 1 = client ticket(?) and 2 = TGT). The tickets are saved in the current directory.
 

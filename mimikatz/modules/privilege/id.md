@@ -1,6 +1,6 @@
 # id
 
-It requests a privilege by its `id`.&#x20;
+`privilege::id` requests a privilege by its `id`.
 
 In the following example, the `id` with value `10` maps to the `SeLoadDriverPrivilege` privilege (like the [driver](driver.md) command).
 
@@ -19,4 +19,4 @@ mimikatz # privilege::id 2
 ERROR kuhl_m_privilege_simple ; RtlAdjustPrivilege (2) c0000061
 ```
 
-This indicates that Mimikatz is not running with administrative privileges. UAC is also a case to consider when GUI access is not possible.&#x20;
+This indicates that Mimikatz is not running with administrative privileges. UAC is also a case to consider when GUI access is not possible.

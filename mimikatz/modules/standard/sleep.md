@@ -1,6 +1,6 @@
 # sleep
 
-It sleep an amount of milliseconds. It has the following command line arguments:
+`standard::sleep` or `sleep` make Mimikatz sleep an amount of milliseconds. It has the following command line arguments:
 
 * positional argument number: the number of milliseconds to sleep (n.b. default is 1s)
 

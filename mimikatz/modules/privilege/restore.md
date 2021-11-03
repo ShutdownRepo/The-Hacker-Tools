@@ -1,9 +1,8 @@
 # restore
 
-It requests the restore privilege (`SeRestorePrivilege`).
+`privlege::restore` requests the restore privilege (`SeRestorePrivilege`).
 
-> Required to perform restore operations. This privilege causes the system to grant all write access control to any file, regardless of the ACL specified for the file. Any access request other than write is still evaluated with the ACL. Additionally, this privilege enables you to set any valid user or group SID as the owner of a file. This privilege is required by the [**RegLoadKey**](https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regloadkeya) function. The following access rights are granted if this privilege is held:\
->
+> Required to perform restore operations. This privilege causes the system to grant all write access control to any file, regardless of the ACL specified for the file. Any access request other than write is still evaluated with the ACL. Additionally, this privilege enables you to set any valid user or group SID as the owner of a file. This privilege is required by the [**RegLoadKey**](https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regloadkeya) function. The following access rights are granted if this privilege is held:\\
 >
 > * WRITE\_DAC
 > * WRITE\_OWNER

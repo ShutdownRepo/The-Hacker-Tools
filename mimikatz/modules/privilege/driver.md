@@ -1,8 +1,8 @@
 # driver
 
-It requests the load driver privilege (`SeLoadDriverPrivilege`).
+`privilege::debug` requests the load driver privilege (`SeLoadDriverPrivilege`).
 
-> Required to load or unload a device driver.&#x20;
+> Required to load or unload a device driver.
 >
 > User Right: Load and unload device drivers.
 >

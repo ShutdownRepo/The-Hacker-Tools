@@ -1,6 +1,6 @@
 # msv
 
-It dumps and lists the NT hash (and other secrets) by targeting the [MSV1\_0 Authentication Package](https://docs.microsoft.com/en-us/windows/win32/secauthn/msv1-0-authentication-package).
+`sekurlsa::msv` dumps and lists the NT hash (and other secrets) by targeting the [MSV1\_0 Authentication Package](https://docs.microsoft.com/en-us/windows/win32/secauthn/msv1-0-authentication-package).
 
 {% hint style="info" %}
 LM and NT hashes are used to authenticate accounts using the NTLM protocol. These hashes are often called NTLM hash and many documentations, resources, blogpost and tools mix terms. In this case, "ntlm" refers to the NT hash.

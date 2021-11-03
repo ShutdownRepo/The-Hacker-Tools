@@ -1,6 +1,6 @@
 # cd
 
-It can change or display the current directory. The changed directory is used for saving files.
+`standard::cd` or `cd` can change or display the current directory. The changed directory is used for saving files.
 
 ```
 mimikatz # cd

@@ -1,6 +1,6 @@
 # hostname
 
-It displays system local hostname
+`standard::hostname` or `hostname` displays system local hostname
 
 ```
 mimikatz # hostname

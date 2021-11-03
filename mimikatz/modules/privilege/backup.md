@@ -1,9 +1,8 @@
 # backup
 
-It requests the backup privilege (`SeBackupPrivilege`).
+`privilege::backup` requests the backup privilege (`SeBackupPrivilege`).
 
-> Required to perform backup operations. This privilege causes the system to grant all read access control to any file, regardless of the [_access control list_](https://docs.microsoft.com/en-us/windows/desktop/SecGloss/a-gly) (ACL) specified for the file. Any access request other than read is still evaluated with the ACL. This privilege is required by the [**RegSaveKey**](https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regsavekeya) and [**RegSaveKeyEx**](https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regsavekeyexa)** **functions. The following access rights are granted if this privilege is held:\
->
+> Required to perform backup operations. This privilege causes the system to grant all read access control to any file, regardless of the [_access control list_](https://docs.microsoft.com/en-us/windows/desktop/SecGloss/a-gly) (ACL) specified for the file. Any access request other than read is still evaluated with the ACL. This privilege is required by the [**RegSaveKey**](https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regsavekeya) and [**RegSaveKeyEx**](https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regsavekeyexa)\*\* \*\*functions. The following access rights are granted if this privilege is held:\\
 >
 > * READ\_CONTROL
 > * ACCESS\_SYSTEM\_SECURITY

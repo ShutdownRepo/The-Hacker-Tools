@@ -1,6 +1,6 @@
 # name
 
-It requests a privilege by its name. It has the following command line argument:
+`privilege::name` requests a privilege by its name. It has the following command line argument:
 
 * positional argument: the name of the privilege
 
@@ -55,4 +55,3 @@ Below is a list of Windows privileges names:
 * `SeShutdownPrivilege`
 * `SeSyncAgentPrivilege`
 * `SeTakeOwnershipPrivilege`
-

@@ -1,6 +1,6 @@
 # base64
 
-It switches file input/output to base64. It has the following command line arguments:
+`standard::base64` or `base64` switches file input/output to base64. It has the following command line arguments:
 
 * `/in`: True or False for base64 input. It can be used with `dpapi::blob /in:<base64_input>`
 * `/out`: True or False. Kerberos tickets can be exported to based64 and passed to other tools like Rubeus.

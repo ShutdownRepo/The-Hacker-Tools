@@ -1,6 +1,6 @@
 # trust
 
-It retrieves the forest trust keys.
+`sekurlsa::trust` retrieves the forest trust keys.
 
 {% hint style="warning" %}
 This command must be executed on a domain controller
