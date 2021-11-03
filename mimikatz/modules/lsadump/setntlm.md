@@ -1,6 +1,6 @@
 # setntlm
 
-It can be used to perform a password reset without knowing the user's current password. It can be useful during an active directory [Access Control (ACL) abuse](https://www.thehacker.recipes/ad/movement/access-controls) scenario. It has the following command line arguments:
+`lsadump::setntlm` can be used to perform a password reset without knowing the user's current password. It can be useful during an active directory [Access Control (ACL) abuse](https://www.thehacker.recipes/ad/movement/access-controls) scenario. It has the following command line arguments:
 
 * `/ntlm`: The new NT hash for the target user
 * `/user`: The username of the account to target

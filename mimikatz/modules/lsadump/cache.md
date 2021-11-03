@@ -1,6 +1,6 @@
 # cache
 
-It can be used to enumerate Domain Cached Credentials from registry. It does so by acquiring the `SysKey` to decrypt `NL$KM` (binary protected value) and then `MSCache(v1/v2)`.
+`lsadump::cache` can be used to enumerate Domain Cached Credentials from registry. It does so by acquiring the `SysKey` to decrypt `NL$KM` (binary protected value) and then `MSCache(v1/v2)`.
 
 The registry key for the Domain Cached Credentials is `HKEY_LOCAL_MACHINE\SECURITY\Cache`
 
@@ -25,7 +25,7 @@ LM and NT hashes are used to authenticate accounts using the NTLM protocol. Thes
 {% endhint %}
 
 {% hint style="warning" %}
-This command requires elevated privileges (by previously running [privilege::debug](https://tools.thehacker.recipes/mimikatz/modules/privilege/debug) or by executing Mimikatz as the NT-AUTHORITY\SYSTEM account).
+This command requires elevated privileges (by previously running [privilege::debug](https://tools.thehacker.recipes/mimikatz/modules/privilege/debug) or by executing Mimikatz as the `NT-AUTHORITY\SYSTEM` account).
 {% endhint %}
 
 ```

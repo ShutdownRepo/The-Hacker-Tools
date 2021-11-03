@@ -7,7 +7,7 @@
 * `/export` : Save the output
 * `/csv` : export to csv
 * `/dc` or `/kdc`: Specify the Domain Controller to connect to and gather data
-* `/guid` : The GUID of the object to sync credentials. It can be obtained with [net::trust](../net/trust.md)
+* `/guid` : The GUID of the object to sync credentials. It can be obtained with [`net::trust`](../net/trust.md).
 
 The following command line arguments of `lsadump::dcsync` can be used for [ZeroLogon](https://www.thehacker.recipes/ad/movement/netlogon/zerologon) exploitation:
 
@@ -95,7 +95,7 @@ Supplemental Credentials:
 ```
 
 {% hint style="warning" %}
-When run `lsadump::dcsync` directly on the domain controller, it is not needed to specify the domain in the`/user`.
+When running `lsadump::dcsync` directly on the domain controller, it is not needed to specify the domain in the`/user`.
 
 `mimikatz # lsadump::dcsync /user:Administrator /domain:hacklab.local`
 {% endhint %}
