@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [🛠️ Mimikatz 🥝](mimikatz/README.md)
-  * [General](mimikatz/general.md)
+* [Mimikatz 🥝](mimikatz/README.md)
+  * [🛠️ General](mimikatz/general.md)
   * [Modules](mimikatz/modules/README.md)
     * [ts](mimikatz/modules/ts/README.md)
       * [mstsc](mimikatz/modules/ts/mstsc.md)
@@ -66,8 +66,8 @@
       * [revert](mimikatz/modules/token/revert.md)
       * [elevate](mimikatz/modules/token/elevate.md)
       * [whoami](mimikatz/modules/token/whoami.md)
-    * [dpapi](mimikatz/modules/dpapi.md)
-    * [crypto](mimikatz/modules/crypto.md)
+    * [🛠️ dpapi](mimikatz/modules/dpapi.md)
+    * [🛠️ crypto](mimikatz/modules/crypto.md)
     * [service](mimikatz/modules/service/README.md)
       * [-](mimikatz/modules/service/undefined.md)
       * [+](mimikatz/modules/service/+.md)
