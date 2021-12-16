@@ -66,7 +66,7 @@
       * [revert](mimikatz/modules/token/revert.md)
       * [elevate](mimikatz/modules/token/elevate.md)
       * [whoami](mimikatz/modules/token/whoami.md)
-    * [🛠️ dpapi](mimikatz/modules/dpapi/README.md)
+    * [dpapi](mimikatz/modules/dpapi/README.md)
       * [ps](mimikatz/modules/dpapi/ps.md)
       * [rdg](mimikatz/modules/dpapi/rdg.md)
       * [ssh](mimikatz/modules/dpapi/ssh.md)
