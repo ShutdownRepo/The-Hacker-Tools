@@ -25,7 +25,7 @@ placeholder: what is the purpose of sid
 
 placeholder: what is the purpose&#x20;
 
-* ``[`rpc::close`](rpc/close.md)` `can be used to close remote RPC sessions
+* ``[`rpc::close`](rpc/close.md) `` can be used to close remote RPC sessions
 * ``[`rpc::enum`](rpc/enum.md) can be used to enumerate RPC endpoints on a system
 * ``[`rpc::server`](rpc/server.md) can be used to start an RPC server
 * ``[`rpc::connect`](rpc/connect.md) be used to connect to an RPC endpoint

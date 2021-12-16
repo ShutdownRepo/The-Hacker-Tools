@@ -1,6 +1,6 @@
 # skeleton
 
-`misc::skeleton` injects a "[Skeleton Key](https://www.thehacker.recipes/ad/persistence/skeleton-key)" into the LSASS process on the domain controller. A "master password" can then be used to authenticate as any domain user, while domain users can authenticate with their own password. The default skeleton key password is `mimikatz`**. **
+`misc::skeleton` injects a "[Skeleton Key](https://www.thehacker.recipes/ad/persistence/skeleton-key)" into the LSASS process on the domain controller. A "master password" can then be used to authenticate as any domain user, while domain users can authenticate with their own password. The default skeleton key password is `mimikatz`**.**&#x20;
 
 The command has the following argument:
 

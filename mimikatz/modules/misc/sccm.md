@@ -1,10 +1,10 @@
 # sccm
 
-`misc::sccm` decrypts the password field in the `SC_UserAccount` table in the SCCM database. According to Benjamin (gentilkiwi), the passwords are encrypted with the key embedded in the value (3DES if encounter `0x6603`** **at offset `0x0c`). This key is protected by the `Microsoft Systems Management Server` RSA key but there are many other things like `global secret`, `exchange cert`_, _and some PFX sometimes. It has the following command line arguments:
+`misc::sccm` decrypts the password field in the `SC_UserAccount` table in the SCCM database. According to Benjamin (gentilkiwi), the passwords are encrypted with the key embedded in the value (3DES if encounter `0x6603` **** at offset `0x0c`). This key is protected by the `Microsoft Systems Management Server` RSA key but there are many other things like `global secret`, `exchange cert`_,_ and some PFX sometimes. It has the following command line arguments:
 
 * `keyuser`: the specific user to target
 * `keycontainer`: the exported private key
-* `connectionstring`: an example is_ _`DRIVER={SQL Server};Trusted=true;DATABASE=CM_PRD;SERVER=myserver.fqdn\instancename;`.
+* `connectionstring`: an example is __ `DRIVER={SQL Server};Trusted=true;DATABASE=CM_PRD;SERVER=myserver.fqdn\instancename;`.
 
 {% hint style="info" %}
 This command requires elevated privileges (by previously running [`privilege::debug`](../privilege/debug.md) or by executing Mimikatz as the `NT-AUTHORITY\SYSTEM` account).
