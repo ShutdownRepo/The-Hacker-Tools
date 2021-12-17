@@ -91,7 +91,7 @@
       * [masterkey](mimikatz/modules/dpapi/masterkey.md)
       * [🛠️ cloudapkd](mimikatz/modules/dpapi/cloudapkd.md)
       * [cloudapreg](mimikatz/modules/dpapi/cloudapreg.md)
-    * [🛠️ crypto](mimikatz/modules/crypto/README.md)
+    * [crypto](mimikatz/modules/crypto/README.md)
       * [sc](mimikatz/modules/crypto/sc.md)
       * [cng](mimikatz/modules/crypto/cng.md)
       * [capi](mimikatz/modules/crypto/capi.md)
