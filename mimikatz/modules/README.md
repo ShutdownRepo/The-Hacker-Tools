@@ -243,5 +243,5 @@
 
 ### vault
 
-* [`vault::cred`](vault/cred.md) enumerates vault credentials. More information can be found at Benjamin's guide [howto-\~-scheduled-tasks-credentials](https://github.com/gentilkiwi/mimikatz/wiki/howto-\~-scheduled-tasks-credentials)
-* [`vault::list`](vault/list.md) lists saved credentials in the Windows Vault such as scheduled tasks, RDP, Internet Explorer for the current user. More information can be found at Benjamin's guide [howto-\~-scheduled-tasks-credentials](https://github.com/gentilkiwi/mimikatz/wiki/howto-\~-scheduled-tasks-credentials)
+* [`vault::cred`](vault/cred.md) enumerates vault credentials
+* [`vault::list`](vault/list.md) lists saved credentials in the Windows Vault such as scheduled tasks, RDP, Internet Explorer for the current user
