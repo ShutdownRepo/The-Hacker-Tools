@@ -57,7 +57,7 @@ placeholder: what is the purpose&#x20;
 
 placeholder: what is the purpose&#x20;
 
-* ``[`event::drop`](event/drop.md) can be used to patch event services to avoid new events ( :warning: experimental)
+* ``[`event::drop`](event/drop.md) can be used to patch event services to avoid new events ( Experimental :warning:)
 * ``[`event::clear`](event/clear.md) clears a specified event log
 
 ### token
