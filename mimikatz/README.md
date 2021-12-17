@@ -1,5 +1,2 @@
-# 🛠️ Mimikatz 🥝
+# Mimikatz 🥝
 
-What is Mimikatz?
-
-TODO
