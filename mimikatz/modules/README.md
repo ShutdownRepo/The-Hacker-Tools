@@ -227,8 +227,6 @@
 
 ### token
 
-The Mimikatz Token module enables Mimikatz to interact with Windows authentication tokens, including grabbing and impersonating existing tokens
-
 * [`token::elevate`](token/elevate.md) can be used to impersonate a token. By default it will elevate permissions to `NT AUTHORITY\SYSTEM`
 * [`token::list`](token/list.md) lists all tokens on the system
 * [`token::revert`](token/revert.md) reverts to the previous token
