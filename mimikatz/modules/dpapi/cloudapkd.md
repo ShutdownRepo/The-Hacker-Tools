@@ -4,7 +4,7 @@
 This is a work in progress
 {% endhint %}
 
-It has the following command line arguments:
+`dpapi::cloudapkd` is undocumented at the moment. It has the following command line arguments:
 
 * `/prt`: Primary Refresh Token
 * `/iat`:

@@ -1,6 +1,6 @@
 # cred
 
-vault::cred enumerates vault credentials. More information can be found at Benjamin's guide [howto-\~-scheduled-tasks-credentials](https://github.com/gentilkiwi/mimikatz/wiki/howto-\~-scheduled-tasks-credentials). It has the following command line argument:
+`vault::cred` enumerates vault credentials. More information can be found at Benjamin's guide [howto-\~-scheduled-tasks-credentials](https://github.com/gentilkiwi/mimikatz/wiki/howto-\~-scheduled-tasks-credentials). It has the following command line argument:
 
 * `/patch`: [according to Benjamin](https://twitter.com/gentilkiwi/status/1241786155458277378) this option must be avoided as it is not OPSEC safe and DPAPI is a better solution
 

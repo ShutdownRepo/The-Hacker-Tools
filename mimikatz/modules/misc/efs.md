@@ -1,6 +1,6 @@
 # efs
 
-The `misc::efs` is the Mimikatz's implementation of the [MS-EFSR abuse (PetitPotam)](https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-efsr), an authentication coercion technique. It has the following command line arguments:
+`misc::efs` is Mimikatz's implementation of the [MS-EFSR abuse (PetitPotam)](https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-efsr), an authentication coercion technique. It has the following command line arguments:
 
 * `/authuser`: the [User Principal Name](https://kb.iu.edu/d/atzp) (UPN). By default it uses the current user's token
 * `/authpassword`: the password of the user.

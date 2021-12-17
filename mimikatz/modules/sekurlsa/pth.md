@@ -1,6 +1,6 @@
 # pth
 
-`sekurlsa::path` performs [Pass-the-Hash](https://www.thehacker.recipes/ad/movement/ntlm/pth), [Pass-the-Key](https://www.thehacker.recipes/ad/movement/kerberos/ptk) and [Over-Pass-the-Hash](https://www.thehacker.recipes/ad/movement/kerberos/opth). Upon successful authentication, a program is run (n.b. defaulted to `cme.exe`). It has the following command line arguments:
+`sekurlsa::pth` performs [Pass-the-Hash](https://www.thehacker.recipes/ad/movement/ntlm/pth), [Pass-the-Key](https://www.thehacker.recipes/ad/movement/kerberos/ptk) and [Over-Pass-the-Hash](https://www.thehacker.recipes/ad/movement/kerberos/opth). Upon successful authentication, a program is run (n.b. defaulted to `cme.exe`). It has the following command line arguments:
 
 * `/user` : the username to impersonate. It must be noted that Administrator is not the only name for this well-known account.
 * `/domain` : the fully qualified domain name. If Active Directory domain services are not in use or in case of local user/admin, a computer or a server name, `workgroup` can be used.

@@ -1,6 +1,6 @@
 # protect
 
-`dpapi::protect` protects  data via a DPAPI call. It has the following command line arguments:
+`dpapi::protect` protects data via a DPAPI call. It has the following command line arguments:
 
 * `/c`: displays the output as a C programming language char array
 * `/out`: save the results to a file
