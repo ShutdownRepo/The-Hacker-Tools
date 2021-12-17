@@ -2,7 +2,7 @@
 
 `dpapi::vault` decrypts DPAPI vault credentials from the [Credential Store](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0). It has the following command line arguments:
 
-* `/cred`: the _**.vcrd**_ files can be found at `C:\Users\<UserName>\AppData\Local\Microsoft\Vault`, `C:\Users\<UserName>\AppData\Roaming\Microsoft\Vault, C:\ProgramData\Microsoft\Vault` and `C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Vault`
+* `/cred`: the _**.vcrd**_ files can be found at `C:\Users\<UserName>\AppData\Local\Microsoft\Vault`, `C:\Users\<UserName>\AppData\Roaming\Microsoft\Vault,` `C:\ProgramData\Microsoft\Vault` and `C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Vault`
 * `/policy`: The _**policy.vpol**_ file can be found at `C:\ProgramData\Microsoft\Vault\`
 * `/password`: the password to decrypt the vault credentials
 * `/masterkey`: the masterkey to use for decryption. It can be obtained through [`sekurlsa::dpapi`](https://tools.thehacker.recipes/mimikatz/modules/sekurlsa/dpapi).
