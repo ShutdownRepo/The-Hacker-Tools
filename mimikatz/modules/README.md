@@ -1,4 +1,4 @@
-## Modules
+# Modules
 
 * [`crypto`](README.md#crypto): *placeholder*
 * [`dpapi`](README.md#dpapi): *placeholder*
@@ -18,9 +18,9 @@
 * [`ts`](README.md#ts): *placeholder*
 * [`vault`](README.md#vault): *placeholder*
 
-## Commands
+# Commands
 
-### crypto
+## crypto
 
 * [`crypto::capi`](modules/crypto/capi.md) patches CryptoAPI layer for easy export (Experimental :warning:)
 * [`crypto::certificates`](modules/crypto/certificates.md) lists or exports certificates
@@ -36,7 +36,7 @@
 * [`crypto::system`](modules/crypto/system.md) it describes a Windows System Certificate
 * [`crypto::tpminfo`](modules/crypto/tpminfo.md) displays information for the Microsoft's TPM Platform Crypto Provider
 
-### dpapi
+## dpapi
 
 * [`dpapi::blob`](modules/dpapi/blob.md) describes a DPAPI blob and unprotects/decrypts it with API or Masterkey
 * [`dpapi::cache`](modules/dpapi/cache.md) displays the credential cache of the DPAPI module
@@ -60,12 +60,12 @@
 * [`dpapi::wifi`](modules/dpapi/wifi.md) decrypts saved Wi-Fi passwords
 * [`dpapi::wwman`](modules/dpapi/wwan.md) decrypts Wwan credentials
 
-### event
+## event
 
 * [`event::clear`](modules/event/clear.md) clears a specified event log
 * [`event::drop`](modules/event/drop.md) patches event services to avoid new events ( :warning: experimental)
 
-### kerberos
+## kerberos
 
 * [`kerberos::ask`](modules/kerberos/ask.md) can be used to obtain Service Tickets. The Windows native command is [`klist get`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/klist)
 * [`kerberos::clist`](modules/kerberos/clist.md) lists tickets in [MIT](https://web.mit.edu/kerberos/)/[Heimdall](https://github.com/heimdal/heimdal) ccache format. It can be useful with other tools (i.e. ones that support [Pass the Cache](https://www.thehacker.recipes/ad/movement/kerberos/ptc))
@@ -77,7 +77,7 @@
 * [`kerberos::purge`](modules/kerberos/purge.md) purges all kerberos tickets similar to [`klist purge`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/klist)
 * [`kerberos::tgt`](modules/kerberos/tgt.md) retrieves a TGT (Ticket-Granting Ticket) for the current user
 
-### lsadump
+## lsadump
 
 * [`lsadump::backupkeys`](modules/lsadump/backupkeys.md) dumps the DPAPI backup keys from the Domain Controller (cf. [dumping DPAPI secrets](https://www.thehacker.recipes/ad/movement/credentials/dumping/dpapi-protected-secrets))
 * [`lsadump::cache`](modules/lsadump/cache.md) can be used to enumerate Domain Cached Credentials from registry. It does so by acquiring the `SysKey` to decrypt `NL$KM` (binary protected value) and then `MSCache(v1/v2)`
@@ -96,7 +96,7 @@
 * [`lsadump::trust`](modules/lsadump/trust.md) can be used for dumping the forest trust keys. Forest trust keys can be leveraged for forging inter-realm trust tickets. Since most of the EDRs are paying attention to the KRBTGT hash, this is a stealthy way to compromise forest trusts
 * [`lsadump::zerologon`](modules/lsadump/zerologon.md) detects and exploits the [ZeroLogon](https://www.thehacker.recipes/ad/movement/netlogon/zerologon) vulnerability
 
-### misc
+## misc
 
 * [`misc::aadcookie`](modules/misc/aadcookie.md) can be used to dump the Azure Panel's session cookie from `login.microsoftonline.com`
 * [`misc::clip`](modules/misc/clip.md) monitors clipboard. `CTRL+C` stops the monitoring
@@ -119,7 +119,7 @@
 * [`misc::wp`](modules/misc/wp.md) sets up a wallpaper
 * [`misc::xor`](modules/misc/xor.md) performs XOR decoding/encoding on a provided file with `0x42` default key
 
-### net
+## net
 
 * [`net::alias`](modules/net/alias.md) displays more information about the local group memberships including Remote Desktop Users, Distributed COM Users, etc
 * [`net::deleg`](modules/net/deleg.md) checks for the following types of [Kerberos delegations](https://www.thehacker.recipes/ad-ds/movement/kerberos/delegations)
@@ -134,7 +134,7 @@
 * [`net::user`](modules/net/user.md) displays the local users
 * [`net::wsession`](modules/net/wsession.md) displays the active sessions through [NetWkstaUserEnum()](https://web.archive.org/web/20190909155552/https://docs.microsoft.com/en-us/windows/win32/api/lmwksta/nf-lmwksta-netwkstauserenum) Win32 API function
 
-### privilege
+## privilege
 
 * [`privilege::backup`](modules/privilege/backup.md) requests the backup privilege (`SeBackupPrivilege`)
 * [`privilege::debug`](modules/privilege/debug.md) requests the debug privilege (`SeDebugPrivilege`)
@@ -146,7 +146,7 @@
 * [`privilege::sysenv`](modules/privilege/sysenv.md) requests the system environment privilege (`SeSystemEnvironmentPrivilege`)
 * [`privilege::tcb`](modules/privilege/tcb.md) requests the tcb privilege (`SeTcbPrivilege`)
 
-### process
+## process
 
 * [`process::exports`](modules/process/exports.md) lists all the exported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then exports for `mimikatz.exe` will be displayed
 * [`process::imports`](modules/process/imports.md) lists all the imported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then imports for `mimikatz.exe` will be displayed
@@ -158,14 +158,14 @@
 * [`process::stop`](modules/process/stop.md) terminates a process by using the [NtTerminateProcess](https://www.geoffchappell.com/studies/windows/win32/ntdll/api/native.htm) Windows Native API function. The Win32 API equal one is [TerminateProcess](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)
 * [`process::suspend`](modules/process/suspend.md) suspends a process by using the [NtSuspendProcess](https://ntopcode.wordpress.com/tag/ntsuspendprocess/) Windows Native API function
 
-### rpc
+## rpc
 
 * [`rpc::close`](modules/rpc/close.md) closes remote RPC sessions
 * [`rpc::connect`](modules/rpc/connect.md) connects to an RPC endpoint
 * [`rpc::enum`](modules/rpc/enum.md) enumerates RPC endpoints on a system
 * [`rpc::server`](modules/rpc/server.md) starts an RPC server
 
-### sekurlsa
+## sekurlsa
 
 * [`sekurlsa::backupkeys`](modules/sekurlsa/backupkeys.md) lists the preferred Backup Master keys
 * [`sekurlsa::bootkey`](modules/sekurlsa/bootkey.md) sets the SecureKernel Boot Key and attempts to decrypt LSA Isolated credentials
@@ -188,7 +188,7 @@
 * [`sekurlsa::tspkg`](modules/sekurlsa/tspkg.md) lists TsPkg credentials. This credentials provider is used for Terminal Server Authentication
 * [`sekurlsa::wdigest`](modules/sekurlsa/wdigest.md) lists WDigest credentials. According to Microsoft, [WDigest.dll](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc778868\(v%3dws.10\)) was introduced in the Windows XP operating system
 
-### service
+## service
 
 * [`service::-`](modules/service/undefined.md) removes the `mimikatzsvc` service
 * [`service::+`](modules/service/+.md) installs the `mimikatzsvc` service by issuing `rpc::server service::me exit`
@@ -200,7 +200,7 @@
 * [`service::stop`](modules/service/stop.md) stops a specified service by sending a `SERVICE_CONTROL_STOP` signal
 * [`service::suspend`](modules/service/suspend.md) suspends the specified service. It sends a `SERVICE_CONTROL_PAUSE` signal
 
-### sid
+## sid
 
 * [`sid::add`](modules/sid/add.md) adds a SID to `sIDHistory` of an object
 * [`sid::clear`](modules/sid/clear.md) clears the `sIDHistory` of a target object
@@ -209,7 +209,7 @@
 * [`sid::patch`](modules/sid/patch.md) patchs the NTDS (NT Directory Services). It's useful when running [`id::modify`](modules/sid/modify.md) or [`sid::add`](modules/sid/add.md)
 * [`sid::query`](modules/sid/query.md) queries an object by its SID or name
 
-### standard
+## standard
 
 * [`standard::answer`](modules/standard/answer.md) or `answer` provides an answer to [The Ultimate Question of Life, the Universe, and Everything!](https://hitchhikers.fandom.com/wiki/Ultimate\_Question) :stars:
 * [`standard::base64`](modules/standard/base64.md) or `base64` switches file input/output to base64
@@ -223,7 +223,7 @@
 * [`standard::sleep`](modules/standard/sleep.md) or `sleep` make Mimikatz sleep an amount of milliseconds
 * [`standard::version`](modules/standard/version.md) or `version` displays the version in use of Mimikatz
 
-### token
+## token
 
 The Mimikatz Token module enables Mimikatz to interact with Windows authentication tokens, including grabbing and impersonating existing tokens
 
@@ -233,7 +233,7 @@ The Mimikatz Token module enables Mimikatz to interact with Windows authenticati
 * [`token::run`](modules/token/run.md) executes a process with its token
 * [`token::whoami`](modules/token/whoami.md) displays the current token
 
-### ts
+## ts
 
 * [`ts::logonpasswords`](modules/ts/logonpasswords.md) extracts clear text credentials from RDP running sessions (server side)
 * [`ts::mstsc`](modules/ts/mstsc.md) extracts cleartext credentials from the mstsc process (client side)
@@ -241,7 +241,7 @@ The Mimikatz Token module enables Mimikatz to interact with Windows authenticati
 * [`ts::remote`](modules/ts/remote.md) performs RDP takeover/hijacking of active sessions
 * [`ts::sessions`](modules/ts/sessions.md) lists the current RDP sessions. It comes in handy for RDP hijacking
 
-### vault
+## vault
 
 * [`vault::cred`](modules/vault/cred.md) enumerates vault credentials. More information can be found at Benjamin's guide [howto-\~-scheduled-tasks-credentials](https://github.com/gentilkiwi/mimikatz/wiki/howto-\~-scheduled-tasks-credentials)
 * [`vault::list`](modules/vault/list.md) lists saved credentials in the Windows Vault such as scheduled tasks, RDP, Internet Explorer for the current user. More information can be found at Benjamin's guide [howto-\~-scheduled-tasks-credentials](https://github.com/gentilkiwi/mimikatz/wiki/howto-\~-scheduled-tasks-credentials)
