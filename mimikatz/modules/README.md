@@ -2,23 +2,23 @@
 
 ## Modules
 
-* [`crypto`](./#crypto): _placeholder_
-* [`dpapi`](./#dpapi): _placeholder_
-* [`event`](./#event): _placeholder_
-* [`kerberos`](./#kerberos): _placeholder_
-* [`lsadump`](./#lsadump): _placeholder_
-* [`misc`](./#misc): _placeholder_
-* [`net`](./#net): _placeholder_
-* [`privilege`](./#privilege): _placeholder_
-* [`process`](./#process): _placeholder_
-* [`rpc`](./#rpc): _placeholder_
-* [`sekurlsa`](./#sekurlsa): _placeholder_
-* [`service`](./#service): _placeholder_
-* [`sid`](./#sid): _placeholder_
-* [`standard`](./#standard): _placeholder_
-* [`token`](./#token): _placeholder_
-* [`ts`](./#ts): _placeholder_
-* [`vault`](./#vault): _placeholder_
+* [`crypto`](./#crypto): This modules deals with the Microsoft Crypto Magic world.
+* [`dpapi`](./#dpapi): The Data Protection Application Programming Interface module. Consider this as an opsec safe option (for now) for getting credentials.
+* [`event`](./#event): this module deals with the Windows Event logs (to clear footprints after compromise).
+* [`kerberos`](./#kerberos): This module deals with the Greek Mythology's three headed Hades dog without the help of Hercules.
+* [`lsadump`](./#lsadump): this module contains some well known functionalities of Mimikatz such as DCSync, DCShadow, dumping of SAM and LSA Secrets.
+* [`misc`](./#misc): The miscellaneous module contains functionalities such as PetitPotam, PrintNightmare RPC Print Spooler and others.
+* [`net`](./#net): some functionalities in this module are similar to the Windows **net** commands. Enumerating sessions and servers configured with different types of Kerberos delegations is also included.
+* [`privilege`](./#privilege): This module deals with the Windows privileges. It includes the favorite debug privilege which holds the keys to LSASS.
+* [`process`](./#process): This module deal with Windows processes. It can also be used for process injection and parent process spoofing.
+* [`rpc`](./#rpc): The Remote Procedure Call module of Mimikatz. It can also be used for controlling Mimikatz remotely.&#x20;
+* [`sekurlsa`](./#sekurlsa): The most beloved module of Mimikatz. Even Benjamin has mentioned in the past that one day people will discover that Mimikatz is more than [`sekurlsa::logonpasswords`](sekurlsa/logonpasswords.md). Hope we made some effort on this Benjamin.
+* [`service`](./#service): This module can interact with Windows services plus installing the `mimikatzsvc` service.
+* [`sid`](./#sid):  This module deals with the Security Identifier.
+* [`standard`](./#standard): This module contains some general functionalities which are not related to exploitation.
+* [`token`](./#token): This module deals with the Windows tokens (who does not really like elevating to `NT AUTHORITY\ SYSTEM`).
+* [`ts`](./#ts): This module deals with the Terminal Services. It can be an alternative for getting clear-text passwords.&#x20;
+* [`vault`](./#vault): This module dumps passwords saved in the Windows Vault.
 
 ## Commands
 
@@ -100,26 +100,26 @@
 
 ### misc
 
-* [`misc::aadcookie`](misc/aadcookie.md) can be used to dump the Azure Panel's session cookie from `login.microsoftonline.com`
-* [`misc::clip`](misc/clip.md) monitors clipboard. `CTRL+C` stops the monitoring
-* [`misc::cmd`](misc/cmd.md) launches the command prompt
-* [`misc::compress`](misc/compress.md) performs a self compression of mimikatz
-* [`misc::detours`](misc/detours.md) is experimental and it tries to enumerate all modules with [Detours-like hooks](https://www.codeproject.com/Articles/30140/API-Hooking-with-MS-Detours)
-* [`misc::efs`](misc/efs.md) is Mimikatz's implementation of the [MS-EFSR abuse (PetitPotam)](https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-efsr), an authentication coercion technique
-* [`misc::lock`](misc/lock.md) locks the screen. It can come in handy with [`misc::memssp`](memssp.md)
-* [`misc::memssp`](misc/memssp.md) patches LSASS by injecting a new Security Support Provider (a DLL is registered)
-* [`misc::mflt`](misc/mflt.md) identifies Windows minifilters inside mimikatz, without using **fltmc.exe**. It can also assist in fingerprinting security products, by altitude too (Gathers details on loaded drivers, including driver altitude)
-* [`misc::ncroutemon`](misc/ncroutemon.md) displays Juniper network connect (without route monitoring)
-* [`misc::ngcsign`](misc/ngcsign.md) can be used to dump the NGC key (Windows Hello keys) signed with the symmetric pop key.
-* [`misc::printnightmare`](misc/printnightmare.md) can be used to exploit the [PrintNightMare](https://adamsvoboda.net/breaking-down-printnightmare-cve-2021-1675/) vulnerability in both \[[MS-RPRN RpcAddPrinterDriverEx](https://docs.microsoft.com/en-us/openspecs/windows\_protocols/ms-rprn/b96cc497-59e5-4510-ab04-5484993b259b)] and \[[MS-PAR AddPrinterDriverEx](https://docs.microsoft.com/en-us/windows/win32/printdocs/addprinterdriverex)]. The bug was discovered by Zhiniang Peng ([@edwardzpeng](https://twitter.com/edwardzpeng?lang=en)) & Xuefeng Li ([@lxf02942370](https://twitter.com/lxf02942370?lang=en))
-* [`misc::regedit`](misc/regedit.md) launches the registry editor
-* [`misc::sccm`](misc/sccm.md) decrypts the password field in the `SC_UserAccount` table in the SCCM database
-* [`misc::shadowcopies`](misc/shadowcopies.md) is used to list the available shadow copies on the system
-* [`misc::skeleton`](misc/skeleton.md) injects a "[Skeleton Key](https://www.thehacker.recipes/ad/persistence/skeleton-key)" into the LSASS process on the domain controller
-* [`misc::spooler`](misc/spooler.md) is Mimikat's implementation of the [MS-RPRN abuse (PrinterBug)](https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-rprn), an authentication coercion technique
-* [`misc::taskmgr`](misc/taskmgr.md) launches the task manager
-* [`misc::wp`](misc/wp.md) sets up a wallpaper
-* [`misc::xor`](misc/xor.md) performs XOR decoding/encoding on a provided file with `0x42` default key
+* [`misc::aadcookie`](modules/misc/aadcookie.md) can be used to dump the Azure Panel's session cookie from `login.microsoftonline.com`
+* [`misc::clip`](modules/misc/clip.md) monitors clipboard. `CTRL+C` stops the monitoring
+* [`misc::cmd`](modules/misc/cmd.md) launches the command prompt
+* [`misc::compress`](modules/misc/compress.md) performs a self compression of mimikatz
+* [`misc::detours`](modules/misc/detours.md) is experimental and it tries to enumerate all modules with [Detours-like hooks](https://www.codeproject.com/Articles/30140/API-Hooking-with-MS-Detours)
+* [`misc::efs`](modules/misc/efs.md) is Mimikatz's implementation of the [MS-EFSR abuse (PetitPotam)](https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-efsr), an authentication coercion technique
+* [`misc::lock`](modules/misc/lock.md) locks the screen. It can come in handy with [`misc::memssp`](memssp.md)
+* [`misc::memssp`](modules/misc/memssp.md) patches LSASS by injecting a new Security Support Provider (a DLL is registered)
+* [`misc::mflt`](modules/misc/mflt.md) identifies Windows minifilters inside mimikatz, without using **fltmc.exe**. It can also assist in fingerprinting security products, by altitude too (Gathers details on loaded drivers, including driver altitude)
+* [`misc::ncroutemon`](modules/misc/ncroutemon.md) displays Juniper network connect (without route monitoring)
+* [`misc::ngcsign`](modules/misc/ngcsign.md) can be used to dump the NGC key (Windows Hello keys) signed with the symmetric pop key.
+* [`misc::printnightmare`](modules/misc/printnightmare.md) can be used to exploit the [PrintNightMare](https://adamsvoboda.net/breaking-down-printnightmare-cve-2021-1675/) vulnerability in both \[[MS-RPRN RpcAddPrinterDriverEx](https://docs.microsoft.com/en-us/openspecs/windows\_protocols/ms-rprn/b96cc497-59e5-4510-ab04-5484993b259b)] and \[[MS-PAR AddPrinterDriverEx](https://docs.microsoft.com/en-us/windows/win32/printdocs/addprinterdriverex)]. The bug was discovered by Zhiniang Peng ([@edwardzpeng](https://twitter.com/edwardzpeng?lang=en)) & Xuefeng Li ([@lxf02942370](https://twitter.com/lxf02942370?lang=en))
+* [`misc::regedit`](modules/misc/regedit.md) launches the registry editor
+* [`misc::sccm`](modules/misc/sccm.md) decrypts the password field in the `SC_UserAccount` table in the SCCM database
+* [`misc::shadowcopies`](modules/misc/shadowcopies.md) is used to list the available shadow copies on the system
+* [`misc::skeleton`](modules/misc/skeleton.md) injects a "[Skeleton Key](https://www.thehacker.recipes/ad/persistence/skeleton-key)" into the LSASS process on the domain controller
+* [`misc::spooler`](modules/misc/spooler.md) is Mimikat's implementation of the [MS-RPRN abuse (PrinterBug)](https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-rprn), an authentication coercion technique
+* [`misc::taskmgr`](modules/misc/taskmgr.md) launches the task manager
+* [`misc::wp`](modules/misc/wp.md) sets up a wallpaper
+* [`misc::xor`](modules/misc/xor.md) performs XOR decoding/encoding on a provided file with `0x42` default key
 
 ### net
 
@@ -150,15 +150,15 @@
 
 ### process
 
-* [`process::exports`](process/exports.md) lists all the exported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then exports for `mimikatz.exe` will be displayed
-* [`process::imports`](process/imports.md) lists all the imported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then imports for `mimikatz.exe` will be displayed
-* [`process::list`](process/list.md) lists all the running processes. It uses the [NtQuerySystemInformation](https://docs.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation) Windows Native API function
-* [`process::resume`](process/resume.md) resumes a suspended process by using the [NtResumeProcess](https://www.geoffchappell.com/studies/windows/win32/ntdll/api/native.htm) Windows Native API function
-* [`process::run`](process/run.md) creates a process by using the [CreateProcessAsUser](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera) Win32 API function. The [CreateEnvironmentBlock](https://docs.microsoft.com/en-us/windows/win32/api/userenv/nf-userenv-createenvironmentblock) is also utilized
-* [`process::runp`](process/runp.md) runs a subprocess under a parent process (Default parent process is `LSASS.exe`). It can also be used for lateral movement and process spoofing
-* [`process::start`](process/start.md) starts a process by using the [CreateProcess](https://web.archive.org/web/20170713150625/https://msdn.microsoft.com/en-us/library/windows/desktop/ms682425.aspx) Win32 API function. The `PID` of the process is also displayed
-* [`process::stop`](process/stop.md) terminates a process by using the [NtTerminateProcess](https://www.geoffchappell.com/studies/windows/win32/ntdll/api/native.htm) Windows Native API function. The Win32 API equal one is [TerminateProcess](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)
-* [`process::suspend`](process/suspend.md) suspends a process by using the [NtSuspendProcess](https://ntopcode.wordpress.com/tag/ntsuspendprocess/) Windows Native API function
+* [`process::exports`](modules/process/exports.md) lists all the exported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then exports for `mimikatz.exe` will be displayed
+* [`process::imports`](modules/process/imports.md) lists all the imported functions from the DLLs each running process is using. If a\*\* \*\*`/pid` is not specified, then imports for `mimikatz.exe` will be displayed
+* [`process::list`](modules/process/list.md) lists all the running processes. It uses the [NtQuerySystemInformation](https://docs.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation) Windows Native API function
+* [`process::resume`](modules/process/resume.md) resumes a suspended process by using the [NtResumeProcess](https://www.geoffchappell.com/studies/windows/win32/ntdll/api/native.htm) Windows Native API function
+* [`process::run`](modules/process/run.md) creates a process by using the [CreateProcessAsUser](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera) Win32 API function. The [CreateEnvironmentBlock](https://docs.microsoft.com/en-us/windows/win32/api/userenv/nf-userenv-createenvironmentblock) is also utilized
+* [`process::runp`](modules/process/runp.md) runs a subprocess under a parent process (Default parent process is `LSASS.exe`). It can also be used for lateral movement and process spoofing
+* [`process::start`](modules/process/start.md) starts a process by using the [CreateProcess](https://web.archive.org/web/20170713150625/https://msdn.microsoft.com/en-us/library/windows/desktop/ms682425.aspx) Win32 API function. The `PID` of the process is also displayed
+* [`process::stop`](modules/process/stop.md) terminates a process by using the [NtTerminateProcess](https://www.geoffchappell.com/studies/windows/win32/ntdll/api/native.htm) Windows Native API function. The Win32 API equal one is [TerminateProcess](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)
+* [`process::suspend`](modules/process/suspend.md) suspends a process by using the [NtSuspendProcess](https://ntopcode.wordpress.com/tag/ntsuspendprocess/) Windows Native API function
 
 ### rpc
 
