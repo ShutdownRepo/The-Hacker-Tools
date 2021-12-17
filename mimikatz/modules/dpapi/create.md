@@ -1,13 +1,13 @@
-# create
+# create 🛠️
 
 `dpapi::create` creates a DPAPI Masterkey file from raw key and metadata. It comes in handy when you want to decrypt a victim's DPAPI secrets locally in your machine. CoreSecurity has published a [guide](https://www.coresecurity.com/core-labs/articles/reading-dpapi-encrypted-keys-mimikatz) on how you can clone the Google Chrome Victim's session and decrypt it from your own box. Benjamin has also [tweeted](https://twitter.com/gentilkiwi/status/1236634610529959936?s=20) how you can recreate masterkeys on your own machine to steal browser sessions and bypass 2FA. It has the following command line arguments:
 
 * `/sid`: the Security Identifier of the target user
 * `/md4`: the MD4 key
-* `/key`: The masterkey. It can be obtained through [`sekurlsa::dpapi`](https://tools.thehacker.recipes/mimikatz/modules/sekurlsa/dpapi)``
-* `/sha1`: the SHA1 key. It can be obtained through [`sekurlsa::dpapi`](https://tools.thehacker.recipes/mimikatz/modules/sekurlsa/dpapi)``
+* `/key`: The masterkey. It can be obtained through [`sekurlsa::dpapi`](https://tools.thehacker.recipes/mimikatz/modules/sekurlsa/dpapi)\`\`
+* `/sha1`: the SHA1 key. It can be obtained through [`sekurlsa::dpapi`](https://tools.thehacker.recipes/mimikatz/modules/sekurlsa/dpapi)\`\`
 * `/hash`: the SHA1 hash of YOUR password when porting the victim's DPAPI files to your system
-* `/dpapi`: TODO
+* `/dpapi`: TODO 🛠️
 * `/guid`: the user's GUID. it can be obtained through [`sekurlsa::dpapi`](https://tools.thehacker.recipes/mimikatz/modules/sekurlsa/dpapi). it is also the _**szGuid**_ output value of the `dpapi::masterkey in:"C:\Users<UserName>\AppData\Roaming\Microsoft\Protect\SID\MasterKey_ID" /rpc`
 * `/system`: the DPAPI\_SYSTEM key. It can be found through [`lsadump::secrets`](https://tools.thehacker.recipes/mimikatz/modules/lsadump/secrets)
 * `/password`: This is YOUR password when porting the victim's DPAPI files to your system

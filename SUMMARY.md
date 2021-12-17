@@ -27,7 +27,7 @@
       * [cloudapkd 🛠️](mimikatz/modules/dpapi/cloudapkd.md)
       * [cloudapreg](mimikatz/modules/dpapi/cloudapreg.md)
       * [cng](mimikatz/modules/dpapi/cng.md)
-      * [create](mimikatz/modules/dpapi/create.md)
+      * [create 🛠️](mimikatz/modules/dpapi/create.md)
       * [cred](mimikatz/modules/dpapi/cred.md)
       * [credhist](mimikatz/modules/dpapi/credhist.md)
       * [luna](mimikatz/modules/dpapi/luna.md)
