@@ -213,7 +213,7 @@
     * [findDelegation](impacket/examples/finddelegation.md)
     * [GetADUsers](impacket/examples/getadusers.md)
     * [getArch](impacket/examples/getarch.md)
-    * [Get-GPPPassword](impacket/examples/get-gpppassword.md)
+    * [Get-GPPPassword.py](impacket/examples/get-gpppassword.py.md)
     * [GetNPUsers](impacket/examples/getnpusers.md)
     * [getPac](impacket/examples/getpac.md)
     * [getST](impacket/examples/getst.md)
