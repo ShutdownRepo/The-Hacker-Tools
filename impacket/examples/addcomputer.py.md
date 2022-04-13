@@ -2,8 +2,6 @@
 
 addcomputer.py can be to used to add a new computer account in the Active Directory, using the credentials of a domain user.&#x20;
 
-
-
 This is usually done when the [MachineAccountQuota](https://www.thehacker.recipes/ad/movement/domain-settings/machineaccountquota) domain-level attribute is set higher than 0 (set to 10 by default), allowing for standard domain users to create and join machine accounts. Alternatively,if the MachineAccountQuota is 0, the utility can still be used if the credentials used match a powerful enough account (e.g. domain administrator).
 
 The utility can be also used to remove a computer account or change its password if the proper rights are validated.
@@ -20,7 +18,7 @@ It has the following generic command line arguments, similar to many other tools
 * `-aesKey`: the AES128 or AES256 hexadecimal long-term key to use for a [pass-the-key](https://www.thehacker.recipes/ad/movement/kerberos/ptk) authentication (Kerberos).
 * `-k`: this flag must be set when authenticating using Kerberos. The utility will try to grab credentials from a Ccache file which path must be set in the `KRB5CCNAME` environment variable. In this case, the utility will do [pass-the-cache](https://www.thehacker.recipes/ad/movement/kerberos/ptc). If valid credentials cannot be found or if the `KRB5CCNAME` variable is not or wrongly set, the utility will use the password specified in the positional argument for plaintext Kerberos authentication, or the NT hash (i.e. RC4 long-term key) in the `-hashes` argument for [overpass-the-hash](https://www.thehacker.recipes/ad/movement/kerberos/opth). A Kirbi file could also be converted to a Ccache file using [ticketConverter.py](ticketconverter.py.md) in order to be used by the utility (indirect [pass-the-ticket](https://www.thehacker.recipes/ad/movement/kerberos/ptt)).
 * `-no-pass`: this flag must be set when an empty password will by used, or no password at all. Without this flag, the user will be prompted for a password when running the utility. This flag is especially useful when using `-k`.
-* `-dc-ip`: IP address of the domain controller. If omitted, the positional argument's domain part will be used (it must be a Fully-Qualified-Domain-Name (FQDN) though).
+* `-dc-ip`: IP address of the domain controller. If omitted, the positional argument's domain part will be used (in that case, it must be a Fully-Qualified-Domain-Name (FQDN)).
 * `-debug`: with this flag set, the utility will be more verbose and will possibly print useful information for debug purposes. With this flag set, the utility will also print tracebacks.
 
 ## Specificities
