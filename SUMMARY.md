@@ -204,7 +204,7 @@
     * [Kerberos](impacket/library/kerberos.md)
     * [NTLM](impacket/library/ntlm.md)
   * [Script examples](impacket/examples/README.md)
-    * [addcomputer.py](impacket/examples/addcomputer.py.md)
+    * [addcomputer.py](impacket/examples/addcomputer.md)
     * [atexec.py](impacket/examples/atexec.py.md)
     * [dcomexec.py](impacket/examples/dcomexec.py.md)
     * [dpapi.py](impacket/examples/dpapi.py.md)
