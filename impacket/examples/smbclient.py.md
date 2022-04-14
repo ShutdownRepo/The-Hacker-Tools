@@ -1,6 +1,6 @@
 # smbclient.py
 
-smbclient.py can be used to explore remote SMB shares interactively.
+[smbclient.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbclient.py) can be used to explore remote SMB shares interactively.
 
 ## Commons
 

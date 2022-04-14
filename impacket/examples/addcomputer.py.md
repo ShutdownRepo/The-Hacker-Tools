@@ -1,6 +1,6 @@
 # addcomputer.py
 
-addcomputer.py can be to used to add a new computer account in the Active Directory, using the credentials of a domain user.&#x20;
+[addcomputer.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/addcomputer.py) can be to used to add a new computer account in the Active Directory, using the credentials of a domain user.&#x20;
 
 This is usually done when the [MachineAccountQuota](https://www.thehacker.recipes/ad/movement/domain-settings/machineaccountquota) domain-level attribute is set higher than 0 (set to 10 by default), allowing for standard domain users to create and join machine accounts. Alternatively,if the MachineAccountQuota is 0, the utility can still be used if the credentials used match a powerful enough account (e.g. domain administrator).
 

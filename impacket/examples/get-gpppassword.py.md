@@ -1,6 +1,6 @@
 # Get-GPPPassword.py
 
-Get-GPPPassword.py can be to used [dump Group Policy Preferences passwords](https://www.thehacker.recipes/ad/movement/credentials/dumping/group-policies-preferences). Unlike other similar tools, this utility doesn't mount the remote `SYSVOL` share from the DC, it uses streams instead to navigate the share and carve file contents.
+[Get-GPPPassword.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/Get-GPPPassword.py) can be to used [dump Group Policy Preferences passwords](https://www.thehacker.recipes/ad/movement/credentials/dumping/group-policies-preferences). Unlike other similar tools, this utility doesn't mount the remote `SYSVOL` share from the DC, it uses streams instead to navigate the share and carve file contents.
 
 ## Commons
 
