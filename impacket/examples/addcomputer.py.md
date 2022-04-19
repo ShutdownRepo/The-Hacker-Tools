@@ -46,3 +46,7 @@ addcomputer.py -computer-name 'COMPUTER$' -computer-pass 'SomePassword' -dc-host
 # Delete a computer account
 addcomputer.py -computer-name 'COMPUTER$' -dc-host $DomainController -delete 'DOMAIN\user:password'
 ```
+
+{% hint style="info" %}
+When using addcomputer.py for the creation of a computer account, the "SAMR" method is used by default (instead of the LDAPS one). At the time of writing (10th of December, 2021), the SAMR method creates the account without SPNs.
+{% endhint %}
