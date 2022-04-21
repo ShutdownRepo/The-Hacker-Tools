@@ -269,4 +269,7 @@
 * [🛠️ Exegol](exegol/README.md)
   * [Project structure](exegol/project-structure.md)
   * [Getting started](exegol/getting-started.md)
-  * [Using the wrapper](exegol/using-the-wrapper.md)
+  * [Using the wrapper](exegol/using-the-wrapper/README.md)
+    * [Standard](exegol/using-the-wrapper/standard.md)
+    * [Advanced](exegol/using-the-wrapper/advanced.md)
+    * [with external devices](exegol/using-the-wrapper/with-external-devices.md)
