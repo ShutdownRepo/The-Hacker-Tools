@@ -2,7 +2,7 @@
 
 `lsadump::dcshadow` performs a DCShadow attack.
 
-DCShadow is a feature in [mimikatz](https://github.com/gentilkiwi/mimikatz) located in the [lsadump](https://tools.thehacker.recipes/mimikatz/modules/lsadump) module. It simulates the behavior of a Domain Controller (using protocols like RPC used only by the DCs) to inject its own data, **bypassing most of the common security controls and including many SIEMs**. It shares some similarities with the DCSync attack [`lsadump::dcsync`](dcsync.md). More information for DCShadow can be found on [dcshadow.com](https://www.dcshadow.com).
+DCShadow is a feature in [mimikatz](https://github.com/gentilkiwi/mimikatz) located in the [lsadump](https://tools.thehacker.recipes/mimikatz/modules/lsadump) module. It simulates the behavior of a Domain Controller (using protocols like RPC used only by the DCs) to inject its own data, **bypassing most of the common security controls and including many SIEMs**. It shares some similarities with the DCSync attack [`lsadump::dcsync`](dcsync.md). More information for DCShadow can be found on [dcshadow.com](https://www.dcshadow.com/).
 
 **Command Line argument(s) to run as SYSTEM:**
 

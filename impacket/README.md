@@ -5,7 +5,7 @@
 ## Setup
 
 * **Requirements:**
-  * [Python](http://www.python.org) interpreter (version 2.7, 3.6, 3.7, 3.8 or 3.9).
+  * [Python](http://www.python.org/) interpreter (version 2.7, 3.6, 3.7, 3.8 or 3.9).
   * [Third-party](https://github.com/SecureAuthCorp/impacket/blob/master/requirements.txt) packages also needed.
 * **Installing:**
   * Grab the latest stable release ([gzip’d tarbal](https://github.com/SecureAuthCorp/impacket/releases/download/impacket\_0\_9\_24/impacket-0.9.24.tar.gz)), unpack it and run: **** `python3 -m pip install .` (or `python2 -m pip install .` for Python 2.x) from the directory where you placed it. This will install the classes into the default Python modules path; note that you might need special permissions to write there.
