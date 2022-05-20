@@ -1,3 +1,2 @@
 # Getting started
 
-##
