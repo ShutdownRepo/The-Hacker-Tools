@@ -41,7 +41,7 @@ talk about requirements cker for Desktop, XQuartz, Rosetta 2 (?), requirements f
 
 ### ARM Host (M1)
 
-
+Some package don't exist for ARM (e.g. Tor, rar, ...)
 
 ### Network modes
 
