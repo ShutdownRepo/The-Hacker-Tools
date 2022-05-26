@@ -43,6 +43,8 @@ talk about requirements cker for Desktop, XQuartz, Rosetta 2 (?), requirements f
 
 Some package don't exist for ARM (e.g. Tor, rar, ...)
 
+Some Java apps seem to encounter issues with XQuartz. They appear with non-intended black background. XQuartz' issue [#31](https://github.com/XQuartz/XQuartz/issues/31) follows this issue.
+
 ### Network modes
 
 Docker for Desktop for macOS runs docker containers inside an xhyve VM with its own network. The host interface cannot be bridge directly to the docker containers, hence preventing the `--network host` feature to work as intended (i.e. the container uses the host's network).
