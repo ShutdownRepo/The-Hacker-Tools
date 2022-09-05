@@ -54,4 +54,4 @@ To enable exegol to support graphical application (or GUI) from a Windows host, 
 
 * with at least one WSL distribution avec Docker / WSL integration
 
-![Docker integration on WSL distro](<../../.gitbook/assets/image (1).png>)
+![Docker integration on WSL distro](<../../.gitbook/assets/image (1) (1).png>)
