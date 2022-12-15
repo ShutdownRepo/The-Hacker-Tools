@@ -6,4 +6,4 @@
 
 ![https://twitter.com/gentilkiwi/status/1194429033750171650](<../../../.gitbook/assets/image (2).png>)
 
-![https://twitter.com/gentilkiwi/status/1194429033750171650](<../../../.gitbook/assets/image (1) (1).png>)
+![https://twitter.com/gentilkiwi/status/1194429033750171650](<../../../.gitbook/assets/image (1).png>)
