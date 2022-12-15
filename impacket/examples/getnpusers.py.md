@@ -31,7 +31,7 @@ It has the following generic command line arguments, similar to many other tools
 
 It also has the following specific command line arguments:
 
-* `-request`: the script will try to request the user's TGT and output it, wether Kerberos preauth is required or not. Without this option, the script will just identify if "Do not require Kerberos preauthentication" is set or not without requesting the TGT.
+* `-request`: the script will retrieve the crackable hash. Without this option, the script will just output vulnerable accounts, by identifying if "Do not require Kerberos preauthentication" is set or not, without actually requesting the TGT.
 * `-outputfile`: the file name to write the retrieved hashed values in. Without this option set, the values will be printed.
 * `-format`: the format to output the hashes in. It must be `hashcat` or `john`. Default is `hashcat` so that the hashes can be ingested by [hashcat](https://tools.thehacker.recipes/hashcat).
 * `-usersfile`: a file with usernames to test. One username per line must be specified (just the username, no domain needed). If omitted, the script will automatically identify user accounts with "Do not require Kerberos preauthentication" in the domain via LDAP.
@@ -40,6 +40,7 @@ It also has the following specific command line arguments:
 If the `-usersfile` argument is not supplied, and no credentials are set (hashes, password, ticket), the script will try to retrieve the users list through the RPC `enumdomusers` command through an [RPC null session](https://www.thehacker.recipes/ad/recon/ms-rpc#null-sessions).
 {% endhint %}
 
+{% code overflow="wrap" %}
 ```bash
 # users list dynamically queried with an RPC null session
 GetNPUsers.py -request -format hashcat -outputfile ASREProastables.txt -dc-ip $KeyDistributionCenter 'DOMAIN/'
@@ -53,3 +54,4 @@ GetNPUsers.py -request -format hashcat -outputfile ASREProastables.txt -dc-ip $K
 # users list dynamically queried with a LDAP authenticated bind (NT hash)
 GetNPUsers.py -request -format hashcat -outputfile ASREProastables.txt -hashes 'LMhash:NThash' -dc-ip $KeyDistributionCenter 'DOMAIN/USER'
 ```
+{% endcode %}
