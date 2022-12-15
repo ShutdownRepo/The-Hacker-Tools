@@ -25,7 +25,7 @@ It also has the following specific command line arguments:
 * `-request`: the script will retrieve the crackable hash. Without this option, the script will just output vulnerable accounts by identifying the user accounts with an SPN, without actually requesting the TGS.
 * `-usersfile`: a file with usernames to test. One username per line must be specified (just the username, no domain needed).
 * `-outputfile`: the file name to write the retrieved hashed values in. Without this option set, the values will be printed.
-* `-request-user`: requests a Service Ticket for the SPN associated to the specified user (just the username, no domain needed).
+* `-request-user`: requests a Service Ticket for the SPN associated to the specified user (just the username, no domain needed). This allows to target a single specific account instead of targetting a list of user, either obtained dynamically or supplied with the `-usersfile` option.
 * `-save`: saves the requested Service Ticket on the disk, in the `.ccache` format. Useful for [Pass the cache](https://www.thehacker.recipes/ad/movement/kerberos/ptc) attack. This option enables `-request` as well.
 * `-target-domain`: allows to specify the domain of the targeted user accounts. It is useful if these accounts are in another domain or forest and the attack is run across a trust. If omitted, the domain specified in the positional argument will be used.
 * `-no-preauth`: this option can be used to indicate a user vulnerable to [ASREProast](https://www.thehacker.recipes/ad/movement/kerberos/asreproast), to conduct an [Kerberoast without preauthentication](https://www.thehacker.recipes/ad/movement/kerberos/kerberoast#kerberoast-w-o-pre-authentication) attack.
