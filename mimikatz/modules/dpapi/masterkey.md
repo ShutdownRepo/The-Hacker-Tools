@@ -1,6 +1,6 @@
 # masterkey
 
-`dpapi::masterkey` describes a Masterkey file and unprotects each Masterkey (key depending). In other words, it can decrypt and request masterkeys from active directory. It has the following command line arguments:
+`dpapi::masterkey` describes a Masterkey file and unprotects each Masterkey (key depending). In other words, it can decrypt and request masterkeys from active directory (cf. [dumping DPAPI secrets](https://www.thehacker.recipes/ad-ds/movement/credentials/dumping/dpapi-protected-secrets)). It has the following command line arguments:
 
 * `/in`: The path of the masterkey. The masterkeys are stored at `C:\Users\<UserName>\AppData\Roaming\Microsoft\Protect\<SID>\<MasterKey>`
 * `/dc`: the target domain controller

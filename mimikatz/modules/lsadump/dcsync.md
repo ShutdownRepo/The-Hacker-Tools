@@ -1,6 +1,6 @@
 # dcsync
 
-`lsadump::dcsync` can be used to do a [DCSync](https://www.thehacker.recipes/ad/movement/credentials/dumping/dcsync) and retrieve domain secrets. This command uses the Directory Replication Service Remote protocol ([MS-DRSR](https://docs.microsoft.com/en-us/openspecs/windows\_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47?redirectedfrom=MSDN)) to request from a domain controller to synchronize a specified entry. It's the same protocol that domain controllers are using between them. It has the following command line arguments:
+`lsadump::dcsync` can be used to do a [DCSync](https://www.thehacker.recipes/ad/movement/credentials/dumping/dcsync) and retrieve domain secrets (cf. [Pass-the-Ticket](https://www.thehacker.recipes/ad/movement/kerberos/ptt)). This command uses the Directory Replication Service Remote protocol ([MS-DRSR](https://docs.microsoft.com/en-us/openspecs/windows\_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47?redirectedfrom=MSDN)) to request from a domain controller to synchronize a specified entry. It's the same protocol that domain controllers are using between them. It has the following command line arguments:
 
 * `/all` : It will DCSync the entire active directory database
 * `/user`: perform syncing only for the specified user

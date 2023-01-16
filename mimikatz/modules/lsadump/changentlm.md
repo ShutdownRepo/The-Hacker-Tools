@@ -1,6 +1,6 @@
 # changentlm
 
-`lsadump::changentlm` can be used to change the password of a user. It accepts either a clear-text password or an NT hash. [According to Benjamin](https://twitter.com/gentilkiwi/status/872588656967548928?s=20) this option avoids the "setpassword" event but it requires to know the previous password or NT hash. It has the following command line arguments:
+`lsadump::changentlm` can be used to change the password of a user (cf. [ZeroLogon](https://www.thehacker.recipes/ad/movement/netlogon/zerologon)). It accepts either a clear-text password or an NT hash. [According to Benjamin](https://twitter.com/gentilkiwi/status/872588656967548928?s=20) this option avoids the "setpassword" event but it requires to know the previous password or NT hash. It has the following command line arguments:
 
 * `/newpassword`: The new clear text password for the target user
 * `/oldpassword` : The existing clear text password to change

@@ -1,6 +1,6 @@
 # sccm
 
-`dpapi::sccm` is used to decrypt saved SCCM credentials. It has the following command line arguments:
+`dpapi::sccm` is used to decrypt saved [SCCM credentials](https://www.thehacker.recipes/ad/movement/sccm-mecm). It has the following command line arguments:
 
 * `/masterkey`: the masterkey to use for decryption
 * `/password`: the password to use for decryption

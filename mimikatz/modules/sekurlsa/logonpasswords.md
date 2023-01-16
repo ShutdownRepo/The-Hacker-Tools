@@ -1,6 +1,6 @@
 # logonpasswords
 
-`sekurlsa::logonpasswords` lists all available provider credentials. This usually shows recently logged on user and computer credentials.
+`sekurlsa::logonpasswords` lists all available provider credentials. (cf. [dumping LSASS secrets](https://www.thehacker.recipes/ad/movement/credentials/dumping/lsass)) This usually shows recently logged on user and computer credentials.
 
 {% hint style="warning" %}
 This command requires elevated privileges (by previously running [`privilege::debug`](../privilege/debug.md) or by executing Mimikatz as the `NT-AUTHORITY\SYSTEM` account).

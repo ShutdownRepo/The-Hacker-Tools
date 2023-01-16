@@ -1,6 +1,6 @@
 # minidump
 
-`sekurlsa::minidump` can be used against a dumped LSASS process file and it does not require administrative privileges. It's considered as an "offline" dump.
+`sekurlsa::minidump` can be used against a dumped LSASS process file and it does not require administrative privileges. It's considered as an "offline" dump. (cf. [LSASS Dumping Secret](https://www.thehacker.recipes/ad/movement/credentials/dumping/lsass))
 
 ```
 mimikatz # sekurlsa::minidump file.dmp

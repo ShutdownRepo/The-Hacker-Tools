@@ -1,6 +1,6 @@
 # dpapi
 
-`sekurlsa::dpapi` lists DPAPI cached masterkeys.
+`sekurlsa::dpapi` lists DPAPI cached masterkeys (cf. [dumping DPAPI secrets](https://www.thehacker.recipes/ad-ds/movement/credentials/dumping/dpapi-protected-secrets)).
 
 {% hint style="warning" %}
 This command requires elevated privileges (by previously running [`privilege::debug`](../privilege/debug.md) or by executing Mimikatz as the `NT-AUTHORITY\SYSTEM` account).

@@ -1,6 +1,6 @@
 # chrome
 
-`dpapi::chrome` dumps stored credentials and cookies from Chrome. It has the following command line arguments:
+`dpapi::chrome` dumps stored credentials and cookies from Chrome. (cf. [dumping DPAPI secrets](https://www.thehacker.recipes/ad-ds/movement/credentials/dumping/dpapi-protected-secrets)) It has the following command line arguments:
 
 * `in`: the `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default\Login Data` for the saves logins and the `C:\Users<UserName>\AppData\Local\Google\Chrome\User Data\Default\Cookies` for the cookies
 * `key`: it is the _**key**_ output value of the `dpapi::masterkey in:"C:\Users\<UserName>\AppData\Roaming\Microsoft\Protect\SID\MasterKey_ID" /rpc`. it is useful for offline dumping of Chrome. CoreSecurity has published an excellent [guide](https://www.coresecurity.com/core-labs/articles/reading-dpapi-encrypted-keys-mimikatz) on how this can be accomplished offline
