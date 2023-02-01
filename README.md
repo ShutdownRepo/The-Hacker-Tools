@@ -1,6 +1,6 @@
 # Introduction
 
-![](<.gitbook/assets/rounded social preview\_v2.png>)
+![](<.assets/rounded social preview\_v2.png>)
 
 {% hint style="danger" %}
 **This project is part of** [**The Hacker Recipes**](https://www.thehacker.recipes) **and is a work in progress**. I started it in 2021 and have absolutely no idea when this could be finished (will it ever be?).

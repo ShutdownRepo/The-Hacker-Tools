@@ -8,7 +8,7 @@ It has the following generic command line arguments, similar to many other tools
 
 * required positional argument: `[domain/]username[:password]` (e.g. `domain.local/user`, `domain/user:password`).
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 * `-hashes`: the LM and/or NT hash to use for a (NTLM). The format is as follows: `[LMhash]:NThash` (the LM hash is optional, the NT hash must be prepended with a colon (`:`).
 * `-aesKey`: the AES128 or AES256 hexadecimal long-term key to use for a authentication (Kerberos).

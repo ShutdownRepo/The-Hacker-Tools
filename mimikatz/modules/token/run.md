@@ -4,4 +4,4 @@
 
 * `/process`: The process to run
 
-![Open Windows explorer with its token](../../../.gitbook/assets/1.png)
+![Open Windows explorer with its token](../../../.gitbook/assets/token\_run\_explorer.png)

@@ -1,6 +1,6 @@
 # shadowcopies
 
-`misc::shadowcopies` is used to list the available shadow copies on the system.&#x20;
+`misc::shadowcopies` is used to list the available shadow copies on the system.
 
 The hivenightmare/serious sam vulnerability was discovered by [JonasLyk](https://twitter.com/jonasLyk/status/1417205166172950531). According to [Will Dormann](https://twitter.com/wdormann),`Builtin\Users` had `RX` access to the SAM, somewhere between Windows 10 1803 and 1809, hence allowing regular users to operate [SAM dumping](https://www.thehacker.recipes/ad/movement/credentials/dumping/sam-and-lsa-secrets).
 
@@ -8,7 +8,7 @@ The hivenightmare/serious sam vulnerability was discovered by [JonasLyk](https:/
 
 ![Win10 1090 SAM file ACLs](<../../../.gitbook/assets/1 (5).PNG>)
 
-![Win 10.0.19043.1110 (21H1) SAM file ACLs](<../../../.gitbook/assets/1 (7).PNG>)
+![Win 10.0.19043.1110 (21H1) SAM file ACLs](../../../.gitbook/assets/icacls\_sam.png)
 
 ```
 mimikatz # misc::shadowcopies
