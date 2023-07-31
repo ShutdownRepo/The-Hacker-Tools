@@ -4,7 +4,6 @@
 
 It has the following command line argument:
 
-![Open Windows explorer with its token](../../../.gitbook/assets/token\_run\_explorer.png)
 * `/id`: Token id to use for the new process
 * `/user`: Execute the process with the tokens of this user (instead of specifying the token ID)..
 * `/process`: The process to run. By default, the command `whoami` is executed.
