@@ -62,7 +62,7 @@ mimikatz # token::whoami /full
  * Thread Token  : no token
 ```
 
-Displayed output:
+Displayed information:
 
 - `*`: Token Type
   - Process Token: Primary Token

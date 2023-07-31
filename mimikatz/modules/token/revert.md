@@ -1,6 +1,6 @@
 # revert
 
-`token::revert` reverts to the previous token.
+`token::revert` reverts to the initial token.
 
 ```
 mimikatz # token::revert
