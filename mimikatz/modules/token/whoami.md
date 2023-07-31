@@ -9,7 +9,7 @@ Display current token:
 
 ```
 mimikatz # token::whoami
- * Process Token : {0;0030f129} 4 F 38912331    FS1\backdoor    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+ * Process Token : {0;0030f129} 4 F 38912331    SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
  * Thread Token  : no token
 ```
 
@@ -20,7 +20,7 @@ The `/full` parameter can be used to display more information about groups (`G`)
 
 ```
 mimikatz # token::whoami /full
- * Process Token : {0;04cfeb5e} 2 F 80775900    client1\backdoor        S-1-5-21-1064812226-1257287110-2416274546-1001  (14g,24p)       Primary
+ * Process Token : {0;04cfeb5e} 2 F 80775900    client1\tmassie        S-1-5-21-1064812226-1257287110-2416274546-1001  (14g,24p)       Primary
    G:[MDE    ] client1\None
    G:[MDE    ] Everyone
    G:[MDE    ] NT AUTHORITY\Local account and member of Administrators group
