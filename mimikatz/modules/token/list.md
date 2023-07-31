@@ -41,7 +41,7 @@ Displayed information (source: [kuhl_m_token.c](https://github.com/gentilkiwi/mi
   - To which process the token belongs.
   - Every process has one primary token and can have multiple impersonation tokens.
   - This ID can be seen in Taskmanager, or Get-Process
-- `{0;0008d895}}`: Logon Session ID (64 bit)
+- `{0;0008d895}`: Logon Session ID (64 bit)
   - higher 32 bit and lower 32 bit
 - `2`: Session ID
 - `L`: Token Elevation Type
