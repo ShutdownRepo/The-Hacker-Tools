@@ -3,7 +3,7 @@
 `token::whoami` displays the current token.
 
 It has the following arguments:
-* `/full`: Display more information about groups and privileges.
+* `/full`: Display more information about groups and privileges. The argument can actually be anything (e.g.`/bar`).
 
 Display current token:
 
