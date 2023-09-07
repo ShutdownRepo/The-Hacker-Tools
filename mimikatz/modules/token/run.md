@@ -2,7 +2,7 @@
 
 `token::run` executes a process with its token.
 
-It has the following command line argument:
+It has the following command line arguments:
 
 * `/id`: Token id to use for the new process
 * `/user`: Execute the process with the tokens of this user (instead of specifying the token ID)..
