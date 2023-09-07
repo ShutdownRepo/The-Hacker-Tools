@@ -1,14 +1,21 @@
 # list
 
-`token::list` lists all tokens on the system. It has the following command line arguments:
+`token::list` lists all tokens on the system.
 
-* `/user`: The user token to list
-* `/system`: List only system tokens
-* `/admin`: List a token of builtin local administrators
-* `/domainadmin`: List tokens with Domain Admin privileges
-* `/enterpriseadmin`: List tokens with Enterprise Admin privileges
-* `/localservice`: List local service accounts tokens
-* `/networkservice`: List network service accounts tokens
+It has the following command line arguments:
+
+* [`/id`](./#id): The token to list by its ID
+* [`/user`](./#user): The user token to list
+* [`/system`](./#system): List only system tokens
+* [`/admin`](./#admin): List a token of builtin local administrators
+* [`/domainadmin`](./#domainadmin): List tokens with Domain Admin privileges
+* [`/enterpriseadmin`](./#enterpriseadmin): List tokens with Enterprise Admin privileges
+* [`/localservice`](./#localservice): List local service accounts tokens
+* [`/networkservice`](./#networkservice): List network service accounts tokens
+
+## General Usage
+
+A low-privileged user can list only own tokens:
 
 ```
 mimikatz # token::list
@@ -16,14 +23,170 @@ Token Id  : 0
 User name :
 SID name  :
 
-5328    {0;002cfe0a} 4 L 2956463        hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,05p)       Primary
-1596    {0;002cfe0a} 4 L 3027920        hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,05p)       Primary
-3232    {0;002cfe0a} 4 L 3069428        hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,02p)       Primary
-6148    {0;002cfe0a} 4 L 3074556        hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,05p)       Primary
-6200    {0;002cfe0a} 4 L 3080889        hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,02p)       Primary
-2112    {0;002cfe0a} 4 L 51041168       hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,01p)       Impersonation (Impersonation)
-5036    {0;002cfce0} 4 F 55140785       hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,24p)       Impersonation (Impersonation)
+3844    {0;0008d895} 2 L 588473         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)        Primary
+964     {0;0008d895} 2 L 651175         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)        Primary
+760     {0;0008d895} 2 L 659720         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)        Primary
+1456    {0;0008d895} 2 L 664286         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)        Primary
+5200    {0;0008d895} 2 L 676578         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)        Primary
+6164    {0;0008d895} 2 L 5603039        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,01p)        Impersonation (Impersonation)
 ```
+
+Every line shows one token:
+
+```
+6164    {0;0008d895} 2 L 5603039        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,01p)        Impersonation (Impersonation)
+```
+
+Displayed information (source: [kuhl_m_token.c](https://github.com/gentilkiwi/mimikatz/blob/master/mimikatz/modules/kuhl_m_token.c#L181)):
+
+- `6164`: Process ID
+  - To which process the token belongs.
+  - Every process has one primary token and can have multiple impersonation tokens.
+  - This ID can be seen in Taskmanager, or Get-Process
+- `{0;0008d895}`: Logon Session ID (64 bit)
+  - higher 32 bit and lower 32 bit
+- `2`: Session ID
+- `L`: Token Elevation Type
+  - `D`: Default
+  - `F`: Full
+  - `L`: Limited
+- `5603039`: Token ID
+- `SERVER01\tmassie`: Username
+  - Domain Accounts: `domain\username`
+  - Local Accounts: `hostname\username` or `NT AUTHORITY\USERNAME`
+- `S-1-5-21-755659916-1915924768-2761631771-1001`: SID
+- `(15g,01p)`: Groups and privileges
+  - `g`: Number of groups
+  - `p`: Number of privileges
+- `Impersonation`: Token Type
+  - Unknown
+  - Primary
+  - Impersonation
+- `(Impersonation)`: Impersonation Level (Only for impersonation tokens)
+  - `Anonymous`: Server cannot impersonate the client
+  - `Identification`: Server can identify client but not impersonate
+  - `Impersonation`: Server can impersonate client’s security context on local system
+  - `Delegation`: Server can impersonate client’s security context on remote systems using cached credentials
+
+As a local admin but without the `SeDebugPrivilege` privilege, you can see the tokens of other user's as well but not of system users like `SYSTEM` or `NETWORK SERVICE`:
+
+```
+mimikatz # token::list
+Token Id  : 0
+User name :
+SID name  :
+
+3844    {0;0008d895} 2 L 588473         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+4376    {0;0008d895} 2 L 601368         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+964     {0;0008d895} 2 L 651175         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+760     {0;0008d895} 2 L 659720         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+3768    {0;0008d7f5} 2 F 661766         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+1456    {0;0008d895} 2 L 664286         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+5200    {0;0008d895} 2 L 676578         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+7156    {0;000f0ac5} 3 F 1075487        winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+5508    {0;0008d7f5} 2 F 5127728        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+7224    {0;0008d7f5} 2 F 5870190        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+6164    {0;0008d895} 2 L 5603039        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,01p)       Impersonation (Impersonation)
+```
+
+With the `SeDebugPrivilege` privilege enabled, you can see all tokens on the system:
+
+```
+mimikatz # privilege::debug
+Privilege '20' OK
+
+mimikatz # token::list
+Token Id  : 0
+User name :
+SID name  :
+
+[...]
+1916    {0;000003e7} 2 D 556559         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Primary
+3844    {0;0008d895} 2 L 588473         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+3428    {0;000003e7} 0 D 593863         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,05p)       Primary
+4376    {0;0008d895} 2 L 601368         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+964     {0;0008d895} 2 L 651175         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+3992    {0;000003e7} 0 D 655073         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,11p)       Primary
+760     {0;0008d895} 2 L 659720         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+3768    {0;0008d7f5} 2 F 661766         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+1456    {0;0008d895} 2 L 664286         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+5200    {0;0008d895} 2 L 676578         SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,02p)       Primary
+5268    {0;000003e7} 3 D 973825         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Primary
+7156    {0;000f0ac5} 3 F 1075487        winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+4428    {0;000003e7} 0 D 2267524        NT AUTHORITY\SYSTEM     S-1-5-18        (04g,28p)       Primary
+5508    {0;0008d7f5} 2 F 5127728        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+7224    {0;0008d7f5} 2 F 5870190        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,24p)       Primary
+676     {0;000003e7} 0 D 28607          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Impersonation (Impersonation)
+676     {0;000003e4} 0 D 555174         NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,06p)       Impersonation (Impersonation)
+676     {0;003e1c50} 0 D 4070487        winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (12g,24p)       Impersonation (Impersonation)
+676     {0;0000756e} 0 D 30076          Font Driver Host\UMFD-0 S-1-5-96-0-0    (09g,02p)       Impersonation (Impersonation)
+676     {0;000003e7} 0 D 46009          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Impersonation (Impersonation)
+[...]
+2096    {0;000003e5} 0 D 75329          NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (16g,03p)       Primary
+2812    {0;000003e6} 0 D 109047         NT AUTHORITY\ANONYMOUS LOGON    S-1-5-7 (01g,00p)       Impersonation (Impersonation)
+2956    {0;000003e7} 0 D 326793         NT AUTHORITY\SYSTEM     S-1-5-18        (12g,07p)       Impersonation (Impersonation)
+1916    {0;000003e7} 2 D 559210         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,10p)       Primary
+5268    {0;000003e7} 3 D 976221         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,10p)       Primary
+```
+
+## id
+
+List token with specific token id:
+
+```
+mimikatz # token::list /id:27044241
+Token Id  : 27044241
+User name :
+SID name  :
+
+9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
+```
+
+## user
+
+List token of specific user:
+
+```
+mimikatz # token::list /user:ffast
+Token Id  : 0
+User name : ffast
+SID name  :
+
+5332    {0;000563b2} 2 F 457263         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+4432    {0;000563b2} 2 F 2839551        winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+668     {0;00050574} 0 D 329079         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (12g,24p)       Impersonation (Impersonation)
+668     {0;000563e4} 2 L 353269         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
+800     {0;000563e4} 2 L 456098         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
+920     {0;000563e4} 2 L 380750         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
+920     {0;000563e4} 2 L 387116         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,01p)       Impersonation (Identification)
+920     {0;000563e4} 2 L 436160         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
+920     {0;000563e4} 2 L 443911         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
+920     {0;000563e4} 2 L 432114         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
+920     {0;000563b2} 2 F 460527         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Impersonation (Impersonation)
+1816    {0;000563e4} 2 L 424793         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,01p)       Impersonation (Impersonation)
+```
+
+## system
+
+List tokens of local `SYSTEM` account:
+
+```
+mimikatz # token::list /system
+Token Id  : 0
+User name :
+SID name  : NT AUTHORITY\SYSTEM
+
+660     {0;000003e7} 1 D 22777          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Primary
+676     {0;000003e7} 0 D 23261          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Primary
+[...]
+2236    {0;000003e7} 0 D 118305         NT AUTHORITY\SYSTEM     S-1-5-18        (12g,04p)       Impersonation (Identification)
+3272    {0;000003e7} 0 D 31384213       NT AUTHORITY\SYSTEM     S-1-5-18        (12g,07p)       Impersonation (Impersonation)
+5568    {0;000003e7} 2 D 594642         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,10p)       Primary
+```
+
+## admin
+
+List tokens of local admins:
 
 ```
 mimikatz # token::list /admin
@@ -31,18 +194,46 @@ Token Id  : 0
 User name :
 SID name  : BUILTIN\Administrators
 
-7040    {0;002cfce0} 4 F 32996383       hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,24p)       Primary
-5036    {0;002cfce0} 4 F 55140785       hacklab\m3g9tr0n        S-1-5-21-2725560159-1428537199-2260736313-1730  (13g,24p)       Impersonation (Impersonation)
+660     {0;000003e7} 1 D 22777          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Primary
+676     {0;000003e7} 0 D 23261          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Primary
+1356    {0;000003e7} 0 D 69077          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,07p)       Primary
+1392    {0;000003e7} 0 D 69588          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,07p)       Primary
+1428    {0;000003e7} 0 D 69888          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,04p)       Primary
+[...]
 ```
 
+## domainadmin
+
+List tokens of domain admins:
 ```
 mimikatz # token::list /domainadmin
 Token Id  : 0
 User name :
-SID name  : hacklab\Domain Admins
+SID name  : winattacklab\Domain Admins
 
-4512    {0;0007212c} 2 D 476947         hacklab\Administrator   S-1-5-21-2725560159-1428537199-2260736313-500   (29g,26p)       Primary
+6260    {0;019c935c} 2 F 30080881       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
+676     {0;019c935c} 2 F 27038624       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Impersonation (Impersonation)
+9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
 ```
+
+## enterpriseadmin
+
+List tokens of enterprise admins:
+
+```
+mimikatz # token::list /enterpriseadmin
+Token Id  : 0
+User name :
+SID name  : winattacklab\Domain Admins
+
+6260    {0;019c935c} 2 F 30080881       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
+676     {0;019c935c} 2 F 27038624       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Impersonation (Impersonation)
+9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
+```
+
+## localservice
+
+List tokens of local service accounts:
 
 ```
 mimikatz # token::list /localservice
@@ -50,15 +241,15 @@ Token Id  : 0
 User name :
 SID name  : NT AUTHORITY\LOCAL SERVICE
 
-752     {0;000003e5} 0 D 77860          NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (16g,11p)       Impersonation (Impersonation)
-752     {0;000003e5} 0 D 140955         NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (18g,06p)       Impersonation (Impersonation)
-752     {0;000003e5} 0 D 300122         NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (16g,05p)       Impersonation (Impersonation)
-752     {0;000003e5} 0 D 1128186        NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (16g,02p)       Impersonation (Impersonation)
-952     {0;000003e5} 0 D 79148          NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (16g,02p)       Impersonation (Impersonation)
-952     {0;000003e5} 0 D 79160          NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (16g,05p)       Impersonation (Impersonation)
-1508    {0;000003e5} 0 D 128246         NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (17g,04p)       Impersonation (Identification)
-1508    {0;000003e5} 0 D 138957         NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (18g,04p)       Impersonation (Identification)
+676     {0;000003e5} 0 D 540433         NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (17g,02p)       Impersonation (Impersonation)
+676     {0;000003e5} 0 D 61742          NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (17g,11p)       Impersonation (Impersonation)
+[...]
+3816    {0;000003e5} 0 D 20547077       NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (17g,03p)       Primary
 ```
+
+## networkservice
+
+List tokens of network service accounts:
 
 ```
 mimikatz # token::list /networkservice
@@ -66,8 +257,9 @@ Token Id  : 0
 User name :
 SID name  : NT AUTHORITY\NETWORK SERVICE
 
-752     {0;000003e4} 0 D 61263          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (10g,10p)       Impersonation (Impersonation)
-752     {0;000003e4} 0 D 94253          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (10g,04p)       Impersonation (Impersonation)
-752     {0;000003e4} 0 D 230166         NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (10g,04p)       Impersonation (Impersonation)
-1508    {0;000003e4} 0 D 127940         NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (10g,03p)       Impersonation (Identification)
+952     {0;000003e4} 0 D 61753          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,03p)       Primary
+8       {0;000003e4} 0 D 66030          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,06p)       Primary
+[...]
+688     {0;000003e4} 0 D 51362          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,08p)       Impersonation (Impersonation)
+688     {0;000003e4} 0 D 90007          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,04p)       Impersonation (Impersonation)
 ```
