@@ -4,7 +4,7 @@
 
 It has the following command line arguments:
 
-* `/token`: The token to list
+* `/id`: The token to list by its ID
 * `/user`: The user token to list
 * `/system`: List only system tokens
 * `/admin`: List a token of builtin local administrators

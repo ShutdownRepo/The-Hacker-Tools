@@ -1,6 +1,8 @@
 # elevate
 
-`token::elevate` can be used to impersonate a token. By default it will elevate permissions to `NT AUTHORITY\SYSTEM`. It has the following command line arguments:
+`token::elevate` can be used to impersonate a token. By default it will impersonate a token from `SYSTEM` and therefore elevate permissions to `NT AUTHORITY\SYSTEM`.
+
+It has the following command line arguments:
 
 * `/id`: Impersonate the specified token
 * `/process`: Impersonate the token of the running process
@@ -10,6 +12,8 @@
 * `/enterpriseadmin`: Impersonate a token with Enterprise Admin privileges
 * `/localservice`: `NT AUTHORITY\LOCAL SERVICE` token impersonation
 * `/networkservice`: `NT AUTHORITY\NETWORK SERVICE` token impersonation
+
+Impersonated tokens will be impersonation tokens (thread tokens) and only work in threads. To impersonate a token in a new process, use `token::run`.
 
 ## Impersonate Token in a New Thread
 
@@ -63,7 +67,7 @@ The output shows:
 
 - The primary (process) token is still the same of the initial user. The `token::elevate` command will not change the primary token.
 - There is now a new impersonation (thread) token for the impersonated user. The impersonation level is `delegation`. It's therefore possible to use the token in a new thread and access local and remote resources.
-- It's not possible to start a new command (`misc::cmd`) as the impersonated user, because the impersonated token is an impersonation token and no process token.
+- It's not possible to start a new command (`misc::cmd`) as the impersonated user, because the impersonated token is an impersonation token and no process token. To impersonate a token in a new process, use `token::run`.
 - All mimikatz commands are now using the impersonation token for new threads.
 
 After impersonating the user (who is domain admin), it's e.g. possible to use `lsadump::dcsync`:
