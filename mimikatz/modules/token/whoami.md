@@ -14,7 +14,7 @@ mimikatz # token::whoami
  * Thread Token  : no token
 ```
 
-- For more information about the output, see `token::list``.
+- For more information about the output, see `token::list`.
 - By default, there is no thread token (impersonation token) and only a process token (prmary token).
 
 The `/full` parameter can be used to display more information about groups (`G`) and privileges (`P`):
