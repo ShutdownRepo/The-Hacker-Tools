@@ -4,13 +4,13 @@
 
 It has the following command line arguments:
 
-* `/id`: Token id to use for the new process
-* `/user`: Execute the process with the tokens of this user (instead of specifying the token ID)..
-* `/process`: The process to run. By default, the command `whoami` is executed.
+* [`/id`](./#id): Token id to use for the new process
+* [`/user`](./#user): Execute the process with the tokens of this user (instead of specifying the token ID)..
+* [`/process`](./#process): The process to run. By default, the command `whoami` is executed.
 
-## Use Primary Token in new Process
+## Preparation
 
-List tokens of user to impersonate:
+List tokens of user to impersonate using the `token::list` module:
 
 ```
 mimikatz # token::list /user:ffast
@@ -28,6 +28,8 @@ SID name  :
 920     {0;000563e4} 2 L 436160         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,02p)       Impersonation (Impersonation)
 [...]
 ```
+
+## id
 
 Run a command using a specified token by it's token ID. By default, the command `whoami` is executed:
 
