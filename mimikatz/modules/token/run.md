@@ -1,6 +1,6 @@
 # run
 
-`token::run` executes a process with its token.
+`token::run` executes a new process with its token.
 
 It has the following command line arguments:
 
