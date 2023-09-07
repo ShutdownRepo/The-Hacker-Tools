@@ -66,7 +66,7 @@ The output shows:
 - It's not possible to start a new command (`misc::cmd`) as the impersonated user, because the impersonated token is an impersonation token and no process token.
 - All mimikatz commands are now using the impersonation token for new threads.
 
-After impersonating the the user (who is domain admin), it's e.g. possible to use `lsadump::dcsync`:
+After impersonating the user (who is domain admin), it's e.g. possible to use `lsadump::dcsync`:
 
 ```
 mimikatz # lsadump::dcsync /user:cclear
