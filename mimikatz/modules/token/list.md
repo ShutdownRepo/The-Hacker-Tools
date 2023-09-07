@@ -4,14 +4,16 @@
 
 It has the following command line arguments:
 
-* `/id`: The token to list by its ID
-* `/user`: The user token to list
-* `/system`: List only system tokens
-* `/admin`: List a token of builtin local administrators
-* `/domainadmin`: List tokens with Domain Admin privileges
-* `/enterpriseadmin`: List tokens with Enterprise Admin privileges
-* `/localservice`: List local service accounts tokens
-* `/networkservice`: List network service accounts tokens
+* [`/id`](./#id): The token to list by its ID
+* [`/user`](./#user): The user token to list
+* [`/system`](./#system): List only system tokens
+* [`/admin`](./#admin): List a token of builtin local administrators
+* [`/domainadmin`](./#domainadmin): List tokens with Domain Admin privileges
+* [`/enterpriseadmin`](./#enterpriseadmin): List tokens with Enterprise Admin privileges
+* [`/localservice`](./#localservice): List local service accounts tokens
+* [`/networkservice`](./#networkservice): List network service accounts tokens
+
+## General Usage
 
 A low-privileged user can list only own tokens:
 
@@ -127,6 +129,21 @@ SID name  :
 5268    {0;000003e7} 3 D 976221         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,10p)       Primary
 ```
 
+## id
+
+List token with specific token id:
+
+```
+mimikatz # token::list /id:27044241
+Token Id  : 27044241
+User name :
+SID name  :
+
+9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
+```
+
+## user
+
 List token of specific user:
 
 ```
@@ -149,16 +166,25 @@ SID name  :
 1816    {0;000563e4} 2 L 424793         winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (15g,01p)       Impersonation (Impersonation)
 ```
 
-List token with specific token id:
+## system
+
+List tokens of local `SYSTEM` account:
 
 ```
-mimikatz # token::list /id:27044241
-Token Id  : 27044241
+mimikatz # token::list /system
+Token Id  : 0
 User name :
-SID name  :
+SID name  : NT AUTHORITY\SYSTEM
 
-9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
+660     {0;000003e7} 1 D 22777          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Primary
+676     {0;000003e7} 0 D 23261          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Primary
+[...]
+2236    {0;000003e7} 0 D 118305         NT AUTHORITY\SYSTEM     S-1-5-18        (12g,04p)       Impersonation (Identification)
+3272    {0;000003e7} 0 D 31384213       NT AUTHORITY\SYSTEM     S-1-5-18        (12g,07p)       Impersonation (Impersonation)
+5568    {0;000003e7} 2 D 594642         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,10p)       Primary
 ```
+
+## admin
 
 List tokens of local admins:
 
@@ -176,6 +202,8 @@ SID name  : BUILTIN\Administrators
 [...]
 ```
 
+## domainadmin
+
 List tokens of domain admins:
 ```
 mimikatz # token::list /domainadmin
@@ -187,6 +215,8 @@ SID name  : winattacklab\Domain Admins
 676     {0;019c935c} 2 F 27038624       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Impersonation (Impersonation)
 9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
 ```
+
+## enterpriseadmin
 
 List tokens of enterprise admins:
 
@@ -200,6 +230,8 @@ SID name  : winattacklab\Domain Admins
 676     {0;019c935c} 2 F 27038624       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Impersonation (Impersonation)
 9196    {0;019c935c} 2 F 27044241       winattacklab\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,24p)       Primary
 ```
+
+## localservice
 
 List tokens of local service accounts:
 
