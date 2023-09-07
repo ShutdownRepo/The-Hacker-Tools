@@ -247,18 +247,19 @@ SID name  : NT AUTHORITY\LOCAL SERVICE
 3816    {0;000003e5} 0 D 20547077       NT AUTHORITY\LOCAL SERVICE      S-1-5-19        (17g,03p)       Primary
 ```
 
-List tokens of local `SYSTEM` account:
+## networkservice
+
+List tokens of network service accounts:
 
 ```
-mimikatz # token::list /system
+mimikatz # token::list /networkservice
 Token Id  : 0
 User name :
-SID name  : NT AUTHORITY\SYSTEM
+SID name  : NT AUTHORITY\NETWORK SERVICE
 
-660     {0;000003e7} 1 D 22777          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,21p)       Primary
-676     {0;000003e7} 0 D 23261          NT AUTHORITY\SYSTEM     S-1-5-18        (04g,31p)       Primary
+952     {0;000003e4} 0 D 61753          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,03p)       Primary
+8       {0;000003e4} 0 D 66030          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,06p)       Primary
 [...]
-2236    {0;000003e7} 0 D 118305         NT AUTHORITY\SYSTEM     S-1-5-18        (12g,04p)       Impersonation (Identification)
-3272    {0;000003e7} 0 D 31384213       NT AUTHORITY\SYSTEM     S-1-5-18        (12g,07p)       Impersonation (Impersonation)
-5568    {0;000003e7} 2 D 594642         NT AUTHORITY\SYSTEM     S-1-5-18        (04g,10p)       Primary
+688     {0;000003e4} 0 D 51362          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,08p)       Impersonation (Impersonation)
+688     {0;000003e4} 0 D 90007          NT AUTHORITY\NETWORK SERVICE    S-1-5-20        (11g,04p)       Impersonation (Impersonation)
 ```
