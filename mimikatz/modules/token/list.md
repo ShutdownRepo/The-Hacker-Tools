@@ -4,14 +4,14 @@
 
 It has the following command line arguments:
 
-* [`/id`](./#id): The token to list by its ID
-* [`/user`](./#user): The user token to list
-* [`/system`](./#system): List only system tokens
-* [`/admin`](./#admin): List a token of builtin local administrators
-* [`/domainadmin`](./#domainadmin): List tokens with Domain Admin privileges
-* [`/enterpriseadmin`](./#enterpriseadmin): List tokens with Enterprise Admin privileges
-* [`/localservice`](./#localservice): List local service accounts tokens
-* [`/networkservice`](./#networkservice): List network service accounts tokens
+* [`/id`](list.md#id): The token to list by its ID
+* [`/user`](list.md#user): The user token to list
+* [`/system`](list.md#system): List only system tokens
+* [`/admin`](list.md#admin): List a token of builtin local administrators
+* [`/domainadmin`](list.md#domainadmin): List tokens with Domain Admin privileges
+* [`/enterpriseadmin`](list.md#enterpriseadmin): List tokens with Enterprise Admin privileges
+* [`/localservice`](list.md#localservice): List local service accounts tokens
+* [`/networkservice`](list.md#networkservice): List network service accounts tokens
 
 ## General Usage
 
@@ -37,36 +37,36 @@ Every line shows one token:
 6164    {0;0008d895} 2 L 5603039        SERVER01\tmassie    S-1-5-21-755659916-1915924768-2761631771-1001   (15g,01p)        Impersonation (Impersonation)
 ```
 
-Displayed information (source: [kuhl_m_token.c](https://github.com/gentilkiwi/mimikatz/blob/master/mimikatz/modules/kuhl_m_token.c#L181)):
+Displayed information (source: [kuhl\_m\_token.c](https://github.com/gentilkiwi/mimikatz/blob/master/mimikatz/modules/kuhl\_m\_token.c#L181)):
 
-- `6164`: Process ID
-  - To which process the token belongs.
-  - Every process has one primary token and can have multiple impersonation tokens.
-  - This ID can be seen in Taskmanager, or Get-Process
-- `{0;0008d895}`: Logon Session ID (64 bit)
-  - higher 32 bit and lower 32 bit
-- `2`: Session ID
-- `L`: Token Elevation Type
-  - `D`: Default
-  - `F`: Full
-  - `L`: Limited
-- `5603039`: Token ID
-- `SERVER01\tmassie`: Username
-  - Domain Accounts: `domain\username`
-  - Local Accounts: `hostname\username` or `NT AUTHORITY\USERNAME`
-- `S-1-5-21-755659916-1915924768-2761631771-1001`: SID
-- `(15g,01p)`: Groups and privileges
-  - `g`: Number of groups
-  - `p`: Number of privileges
-- `Impersonation`: Token Type
-  - Unknown
-  - Primary
-  - Impersonation
-- `(Impersonation)`: Impersonation Level (Only for impersonation tokens)
-  - `Anonymous`: Server cannot impersonate the client
-  - `Identification`: Server can identify client but not impersonate
-  - `Impersonation`: Server can impersonate client’s security context on local system
-  - `Delegation`: Server can impersonate client’s security context on remote systems using cached credentials
+* `6164`: Process ID
+  * To which process the token belongs.
+  * Every process has one primary token and can have multiple impersonation tokens.
+  * This ID can be seen in Taskmanager, or Get-Process
+* `{0;0008d895}`: Logon Session ID (64 bit)
+  * higher 32 bit and lower 32 bit
+* `2`: Session ID
+* `L`: Token Elevation Type
+  * `D`: Default
+  * `F`: Full
+  * `L`: Limited
+* `5603039`: Token ID
+* `SERVER01\tmassie`: Username
+  * Domain Accounts: `domain\username`
+  * Local Accounts: `hostname\username` or `NT AUTHORITY\USERNAME`
+* `S-1-5-21-755659916-1915924768-2761631771-1001`: SID
+* `(15g,01p)`: Groups and privileges
+  * `g`: Number of groups
+  * `p`: Number of privileges
+* `Impersonation`: Token Type
+  * Unknown
+  * Primary
+  * Impersonation
+* `(Impersonation)`: Impersonation Level (Only for impersonation tokens)
+  * `Anonymous`: Server cannot impersonate the client
+  * `Identification`: Server can identify client but not impersonate
+  * `Impersonation`: Server can impersonate client’s security context on local system
+  * `Delegation`: Server can impersonate client’s security context on remote systems using cached credentials
 
 As a local admin but without the `SeDebugPrivilege` privilege, you can see the tokens of other user's as well but not of system users like `SYSTEM` or `NETWORK SERVICE`:
 
@@ -205,6 +205,7 @@ SID name  : BUILTIN\Administrators
 ## domainadmin
 
 List tokens of domain admins:
+
 ```
 mimikatz # token::list /domainadmin
 Token Id  : 0

@@ -4,9 +4,9 @@
 
 It has the following command line arguments:
 
-* [`/id`](./#id): Token id to use for the new process
-* [`/user`](./#user): Execute the process with the tokens of this user (instead of specifying the token ID)..
-* [`/process`](./#process): The process to run. By default, the command `whoami` is executed.
+* [`/id`](run.md#id): Token id to use for the new process
+* [`/user`](run.md#user): Execute the process with the tokens of this user (instead of specifying the token ID)..
+* [`/process`](run.md#process): The process to run. By default, the command `whoami` is executed.
 
 ## Preparation
 
@@ -152,14 +152,12 @@ SID name  :
 ERROR kull_m_process_run_data ; CreateProcessAsUser (0x00000522)
 ```
 
-- The error message says that the `CreateProcessAsUser` function could not be executed.
+* The error message says that the `CreateProcessAsUser` function could not be executed.
 
-The `token::run` command uses the function `CreateProceasAsUser` to create a
-new process in the security context of the specified token and requires the
-following privileges (source: [CreateProcessAsUserA function (processthreadsapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera)):
+The `token::run` command uses the function `CreateProceasAsUser` to create a new process in the security context of the specified token and requires the following privileges (source: [CreateProcessAsUserA function (processthreadsapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera)):
 
-- `SeIncreaseQuotaPrivilege` privilege
-- `SeAssignPrimaryTokenPrivilege` privilege (if the token is not assignable)
+* `SeIncreaseQuotaPrivilege` privilege
+* `SeAssignPrimaryTokenPrivilege` privilege (if the token is not assignable)
 
 A local admin has the permission to get the `SeIncreaseQuotaPrivilege` privilege but not the `SeAssignPrimaryTokenPrivilege` privilege:
 
