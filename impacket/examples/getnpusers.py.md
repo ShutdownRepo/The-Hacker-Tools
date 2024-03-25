@@ -1,6 +1,6 @@
 # GetNPUsers.py
 
-[GetNPUsers.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) can be used to retrieve domain users who do not have "Do not require Kerberos preauthentication" set and ask for their TGTs without knowing their passwords. It is then possible to attempt to crack the session key sent along the ticket to retrieve the user password. This attack is known as [ASREProast](https://www.thehacker.recipes/ad/movement/kerberos/asreproast).
+[GetNPUsers.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetNPUsers.py) can be used to retrieve domain users who have "Do not require Kerberos preauthentication" set and ask for their TGTs without knowing their passwords. It is then possible to attempt to crack the session key sent along the ticket to retrieve the user password. This attack is known as [ASREProast](https://www.thehacker.recipes/ad/movement/kerberos/asreproast).
 
 {% hint style="info" %}
 This script can dynamically obtain the list of users in the domain
